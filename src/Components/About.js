@@ -14,7 +14,7 @@ export default function About() {
             <Text>I am an entusiastic frontend developer with lots of vibes. You get what you want only if you give what you have. Lol</Text>
             <Button w={isBigScreen?'80%':'100%'} mt={'10px'}>Hire Me</Button>
           </Box>
-          <Image alt='Makinde Mayowa' src='/mayowa.jpg' objectFit={'contain'} boxSize={'250'} boxShadow='lg' alignSelf={'center'} mt={isBigScreen?'0':'10px'} borderRadius='50%' border={'10px solid black'}/>
+          <Image alt='Makinde Mayowa' src='/mayowa.jpg' objectFit={'contain'} boxSize={'250'} boxShadow='lg' alignSelf={'center'} mt={isBigScreen?'0':'10px'} borderRadius='50%' border={isDark?'10px solid silver':'10px solid black'}/>
         </Flex>
       </Stack>
   )
