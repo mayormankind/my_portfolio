@@ -1,16 +1,17 @@
-import { Box, Flex, Heading, useMediaQuery,Text } from '@chakra-ui/react';
-import React from 'react'
-import ProjectCard from '../LinkSrc/ProjectCard';
+import { Box, Flex, Heading, useMediaQuery,Text, Link } from '@chakra-ui/react';
+import React,{useState} from 'react';
+import ProjectCard, { ReadModal } from '../LinkSrc/ProjectCard';
 
 function Projects() {
+    const [readMore,setReadmore] = useState(false);
     const [isBigScreen] = useMediaQuery('(min-width:600px)');
     const projectList = [
-        {id:'1',projectName:'Feedback Manga',projectImage:'/p1.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'2',projectName:'Pyvot360',projectImage:'/p2.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'3',projectName:'Lightgram LoginPage',projectImage:'/p3.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'4',projectName:'Lightgram WebApp',projectImage:'/p4.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'5',projectName:"Mankind's Portfolio",projectImage:'/p5.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'6',projectName:'Portfolio 2',projectImage:'/p6.png',pref:'https://lightgram-mod.vercel.app'}
+        {id:'1',projectName:'Feedback Manga',projectDetails:'A yearBook with a schedular just for you.',projectImage:'/p1.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'2',projectName:'Pyvot360',projectDetails:'A CMS to create your own free business portfolio',projectImage:'/p2.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'3',projectName:'Lightgram LoginPage',projectDetails:'A central web app with for a community.',projectImage:'/p3.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app with for a community.',projectImage:'/p4.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'my pesonal potfolio made with react and chakra UI',projectImage:'/p5.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'6',projectName:'Portfolio 2',projectDetails:'my pesonal potfolio made with react and chakra UI',projectImage:'/p6.png',pref:'https://lightgram-mod.vercel.app'}
     ];
   return (
     <Box bg={'rgba(155,155,155,0.5)'} pb='20px' mb={'20px'} w='100%' h='100%'>
@@ -23,7 +24,7 @@ function Projects() {
                 projectList.map(each=>(
                     <Box position={'relative'} key={each.id}>
                         <Text as={'span'} zIndex='1' right={'-10px'} position='absolute' fontWeight='bold' fontSize={'60px'} bg='transparent' opacity={'.3'}>{`0${each.id}`}</Text>
-                        <ProjectCard id={each.id} pref={each.pref} name={each.projectName} img={each.projectImage}/>
+                        <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails}/>
                     </Box>
                 ))
             }

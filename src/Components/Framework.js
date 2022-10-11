@@ -44,7 +44,7 @@ function Framework() {
             {Obj.map(each=>(
                 <Flex key={each.id} fontSize={isBigScreen?'50px':'40px'} flexDir={isBigScreen?'row':'column'} alignItems={'center'} w={isBigScreen?'140px':'fit-content'}>
                     <Text color={each.color} mr='5px'>{each.img}</Text>
-                    <Text fontSize={'20px'}>{each.frname}</Text>
+                    <Text fontSize={'20px'} fontWeight='bold'>{each.frname}</Text>
                 </Flex>
             ))}
         </Flex>
