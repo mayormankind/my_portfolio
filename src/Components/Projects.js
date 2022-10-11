@@ -7,7 +7,7 @@ function Projects() {
     const [isBigScreen] = useMediaQuery('(min-width:600px)');
     const projectList = [
         {id:'1',projectName:'Feedback Manga',projectDetails:'A yearBook with a schedular just for you.',projectImage:'/p1.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'2',projectName:'Pyvot360',projectDetails:'A CMS to create your own free business portfolio',projectImage:'/p2.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'/p2.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'3',projectName:'Lightgram LoginPage',projectDetails:'A central web app with for a community.',projectImage:'/p3.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app with for a community.',projectImage:'/p4.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'5',projectName:"Mankind's Portfolio",projectDetails:'my pesonal potfolio made with react and chakra UI',projectImage:'/p5.png',pref:'https://lightgram-mod.vercel.app'},
