@@ -15,7 +15,7 @@ function Social() {
       id:'2',
       Sname:'Twitter',
       icon:<RiTwitterFill/>,
-      ref:'https://mobile.twitter.com/MakindeMayowa05'
+      ref:'https://mobile.twitter.com/MakindeMayowaO5'
     },
     {
       id:'3',
