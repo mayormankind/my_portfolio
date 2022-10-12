@@ -19,9 +19,9 @@ const [readMore,setReadmore] = useState(false);
 }
 export const ReadModal = (props)=>{
     return(
-        <Flex bg={'rgba(0,0,0,1)'} p='0 20px' w='100%' h='100%' position={'absolute'} bottom='0' textAlign={'center'} justify={'center'} flexDir={'column'} zIndex='1'>
+        <Flex bg={'rgba(0,0,0,1)'} p='0 10px' w='100%' h='100%' position={'absolute'} bottom='0' textAlign={'center'} justify={'center'} flexDir={'column'} zIndex='1'>
             <Text fontSize={'15px'}>{props.det}</Text>
-            <Link href={props.href}><Text as={'span'}>Go to Site</Text></Link>
+            <Link href={props.href} Mt='10px'><Text as={'span'}>Go to Site</Text></Link>
         </Flex>        
     )
 }
