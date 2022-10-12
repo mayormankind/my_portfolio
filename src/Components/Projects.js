@@ -10,8 +10,8 @@ function Projects() {
         {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'/p2.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'3',projectName:'Lightgram LoginPage',projectDetails:'A central web app with for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app with for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app'},
-        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'my personal potfolio made with react and chakra UI',projectImage:'/p5.png',pref:'https://my-portfolio-delta-lac.vercel.app/'},
-        {id:'6',projectName:'Portfolio 2',projectDetails:'my personal potfolio made with react and chakra UI',projectImage:'/p6.png',pref:'https://lightgram-mod.vercel.app'}
+        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'my personal potfolio made with react and chakra UI',projectImage:'/https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app/'},
+        {id:'6',projectName:'Portfolio 2',projectDetails:'my personal potfolio made with react and chakra UI',projectImage:'/https://res.cloudinary.com/dcesze7l8/image/upload/v1665533462/portfolio/p6_y2kauc.png',pref:'https://lightgram-mod.vercel.app'}
     ];
   return (
     <Box bg={'rgba(155,155,155,0.5)'} pb='20px' mb={'20px'} w='100%' h='100%'>
