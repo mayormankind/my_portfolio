@@ -25,7 +25,7 @@ function Header() {
   }
   const MobileTabs = ()=>{
     return(
-      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='50%' w='100%' bottom={0} bg={'rgba(0,0,0,0.9)'}>
+      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='50%' w='100%' bottom={0} bg={'rgba(0,0,0,0.9)'} transition='.8s ease-in'>
         <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
         <Flex flexDir={'column'} p='30px 0' h='100%' w='100%' align='center' justify={'space-around'}>
           {Navs.map(nav=>(
@@ -47,7 +47,7 @@ function Header() {
               <Link key={nav.id} href={nav.refr} ml='20px'>{nav.lab}</Link>
             ))}
           </List>
-        ):(<IconButton icon={<RiMenu3Fill/>} onClick={dispModal} fontSize='25px' variant={'ghost'} mt='5px'/>)}
+        ):(<IconButton icon={<RiMenu3Fill/>} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>)}
         <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
         {modal && <MobileTabs/>}
     </Flex>
