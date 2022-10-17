@@ -7,8 +7,8 @@ export default function About() {
   const isDark = colorMode=='dark';
   return (
       <Stack px={isBigScreen?'0':'20px'} mt={isBigScreen?'0':'10px'} position='relative'>
-        <Flex p={isBigScreen ? '40px':'0'} justify={'center'} flexDir={isBigScreen?'row':'column'}>
-          <Box align='flex-start' w={isBigScreen?'70%':'100%'}>
+        <Flex p={isBigScreen ? '40px':'0'} justify={'center'} align='center' flexDir={isBigScreen?'row':'column'}>
+          <Box align='flex-start' w={isBigScreen?'60%':'100%'}>
             <Text fontSize={isBigScreen ? '3xl' :'2xl'}>Hello there, I'm </Text>
             <Text fontSize={isBigScreen ? '5xl' :'3xl'} fontWeight='bold'>Makinde Mayowa</Text>
             <Text>I'm an entusiastic frontend developer with lots of vibes. I specialize in making catchy web apps that you might just want to sleep on. I really do love classic designs and interfaces and that makes me want to work on myself. You get what you want only if you give what you have. Guess i have the time that's why i'm giving it. Lol!!</Text>
