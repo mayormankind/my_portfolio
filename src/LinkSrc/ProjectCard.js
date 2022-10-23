@@ -18,8 +18,8 @@ const ReadModal = (props)=>{
     <Box key={props.id} mb={'20px'} w='100%' onClick={(e)=>setReadmore(true)}>
         <Flex flexDir={'column'} position='relative'>
         {readMore&&<ReadModal det={props.det} href={props.href}/>}
-            <Box width={'350px'} h='250px' borderRadius='10px' boxShadow='0px 5px 12px 0px rgba(0,0,0,0.5)'>
-                <Image src={props.img} borderRadius='10px' h='100%' w='100%'/>
+            <Box width={'350px'} h='250px' rounded={'md'} boxShadow={'xl'}>
+                <Image src={props.img} rounded={'md'} h='100%' w='100%'/>
             </Box>
         </Flex>
             <Text textAlign={'center'} fontSize='20px' fontFamily={'monospace'}>{props.name}</Text>
