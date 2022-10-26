@@ -7,7 +7,6 @@ import Layout from './Components/Layout';
 function App() {
   return (
     <Container>
-      {/* <Header/> */}
       <Layout/>
     </Container>
   );
