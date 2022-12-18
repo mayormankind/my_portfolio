@@ -1,19 +1,21 @@
-import { Box, Flex, Heading, useMediaQuery,Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Image, Heading, useColorMode, useMediaQuery,Text, Link } from '@chakra-ui/react';
 import React,{useState} from 'react';
 import ProjectCard, { ReadModal } from '../LinkSrc/ProjectCard';
 
 function Projects() {
+    const {colorMode}=useColorMode();
+  const isDark = colorMode=='dark';
     const [readMore,setReadmore] = useState(false);
     const [isBigScreen] = useMediaQuery('(min-width:600px)');
     const projectList = [
-        {id:'1',projectName:'Feedback Manga',projectDetails:'A yearBook with a schedular just for you.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://lightgram-mod.vercel.app'},
+        {id:'1',projectName:'MyDo',projectDetails:'A todo app that has built in tabs for personal bucket-list, wishList, Long-Term goals and also keeps track of all achieved goals.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://lightgram-mod.vercel.app'},
         {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app with for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app'},
-        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'my personal potfolio made with react and chakra UI',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app/'},
-        {id:'6',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app/'}
+        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app'},
+        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'My personal potfolio that consists of projects i have worked on',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app/'},
+        {id:'6',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies (an engineering company',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app/'}
     ];
   return (
-    <Box bg={'rgba(155,155,155,0.5)'} pb='20px' mb={'20px'} w='100%' h='100%'>
+    <Box bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'} pb='20px' mb={'20px'} w='100%' h='100%'>
         <Flex position='relative' ml={isBigScreen?'20px':'60px'} right='-20px'>
             <Text as={'span'} p='10px' fontSize={isBigScreen? '70px':'5xl'} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
             <Text as={'span'} position='absolute' top='1.7em' fontSize={isBigScreen? '2xl':'20px'} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
@@ -21,8 +23,9 @@ function Projects() {
         <Flex as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'}>
             {
                 projectList.map(each=>(
-                    <Box position={'relative'} key={each.id}>
-                        <Text as={'span'} zIndex='1' right={'-10px'} position='absolute' fontWeight='bold' fontSize={'60px'} bg='transparent' opacity={'.3'}>{`0${each.id}`}</Text>
+                    <Box position={'relative'} key={each.id} px='70px'>
+                        {/* <Text as={'span'} zIndex='1' right={'-10px'} position='absolute' fontWeight='bold' fontSize={'60px'} bg='transparent' opacity={'.3'}>{`0${each.id}`}</Text>
+                        <Image src='LogoWhite.png' boxSize={'100px'} zIndex='1' right={'-2px'} top='10px' position='absolute'/> */}
                         <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails}/>
                     </Box>
                 ))

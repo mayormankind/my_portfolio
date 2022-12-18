@@ -1,9 +1,9 @@
-import { Box, HStack, List,Text,ListItem, Heading, Flex, Icon, Link } from '@chakra-ui/react';
+import { Box,Text, useMediaQuery, Heading, Flex, Icon, Link } from '@chakra-ui/react';
 import React from 'react';
 import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill} from 'react-icons/ri';
-// import { Link } from 'react-router-dom';
 
 function Social() {
+  const [isBigScreen] = useMediaQuery('(min-width:600px)');
   const Accounts=[
     {
       id:'1',
@@ -21,7 +21,7 @@ function Social() {
       id:'3',
       Sname:'Whatsapp',
       icon:<RiWhatsappFill/>,
-      ref:'https://github.com/mayormankind'
+      ref:'https://wa.me/07040829383'
     },
     {
       id:'4',
@@ -39,7 +39,7 @@ function Social() {
   return (
     <Box bg={'black'} color={'white'} w='100%' h='100%' p='30px'>
       <Heading textAlign={'center'}>Social</Heading>
-      <Flex justify='space-around' mt='30px' w='100%' h='100%' flexWrap='wrap'>
+      <Flex justify={isBigScreen?'space-around':'space-between'} mt='30px' w='100%' h='100%' flexWrap='wrap'>
         {Accounts.map(social=>(
           <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
               <Text fontSize={'2xl'} mr='3px'>{social.icon}</Text>
