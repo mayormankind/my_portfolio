@@ -8,11 +8,11 @@ function Projects() {
     const [readMore,setReadmore] = useState(false);
     const [isBigScreen] = useMediaQuery('(min-width:600px)');
     const projectList = [
-        {id:'1',projectName:'MyDo',projectDetails:'A todo app that has built in tabs for personal bucket-list, wishList, Long-Term goals and also keeps track of all achieved goals.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app'},
-        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app'},
-        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'My personal potfolio that consists of projects i have worked on',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app/'},
-        {id:'6',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies (an engineering company',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app/'}
+        {id:'1',projectName:'MyDo',projectDetails:'A todo app with other built in functions for personal use.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'My personal potfolio that consists of projects i have worked on',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'6',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies (an engineering company',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app',frameworks:['react','chakraUI','react-icons']}
     ];
   return (
     <Box bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'} pb='20px' mb={'20px'} w='100%' h='100%'>
@@ -26,7 +26,7 @@ function Projects() {
                     <Box position={'relative'} key={each.id} px='70px'>
                         {/* <Text as={'span'} zIndex='1' right={'-10px'} position='absolute' fontWeight='bold' fontSize={'60px'} bg='transparent' opacity={'.3'}>{`0${each.id}`}</Text>
                         <Image src='LogoWhite.png' boxSize={'100px'} zIndex='1' right={'-2px'} top='10px' position='absolute'/> */}
-                        <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails}/>
+                        <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                     </Box>
                 ))
             }
