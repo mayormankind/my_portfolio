@@ -12,7 +12,6 @@ function ProjectCard(props) {
         const colors = ['red','green','blue','purple','orange','yellow','black','skyblue','magenta','cyan','deepblue','violet','indigo']
         const colorIndex = Math.floor(Math.random()*13);
         color = colors[colorIndex];
-        // console.log(color);
         return (color);
     }
 const ReadModal = (props)=>{
@@ -35,7 +34,7 @@ const ReadModal = (props)=>{
                 </Box>    
                 <HStack spacing={'7px'} flexWrap={'wrap'} w='100%' fontSize={'15px'}>
                     {props.frames.map(tech=>(
-                        <Text border={`1px solid ${BorderColorGen()}`} textAlign='center' mb='5px' p='6px' rounded={'full'}>{tech}</Text>
+                        <Text border={`2px solid ${BorderColorGen()}`} textAlign='center' mb='5px' p='6px' rounded={'full'}>{tech}</Text>
                     ))}
                 </HStack>
                 <Flex mx={'auto'} justify='space-around' w='100%'>
