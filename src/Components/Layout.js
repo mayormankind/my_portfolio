@@ -5,6 +5,7 @@ import About from './About';
 import Social from './Social';
 import Framework from './Framework';
 import Projects from './Projects';
+import Footer from './Footer';
 
 function Layout() {
   const {colorMode}=useColorMode();
@@ -16,7 +17,8 @@ function Layout() {
         <About/>
         <Framework/>
         <Projects/>
-        <Social/>
+        <Footer/>
+        {/* <Social/> */}
     </VStack>
   </Flex>
   )

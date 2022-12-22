@@ -1,7 +1,6 @@
 import { Box,Image, Text, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import Header from './Header'
-import './G.css';
 
 export default function Container({children}) {
   const {colorMode} = useColorMode();

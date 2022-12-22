@@ -1,6 +1,6 @@
 import { Box, Flex, useColorMode, Image, Link, Text, Button,useMediaQuery, HStack, VStack, Grid, color } from '@chakra-ui/react';
 import React,{useState} from 'react';
-import {FaForward} from 'react-icons/fa'
+import {FaForward} from 'react-icons/fa';
 
 function ProjectCard(props) {
     const [readMore,setReadmore] = useState(false);
@@ -49,15 +49,3 @@ const ReadModal = (props)=>{
 }
 
 export default ProjectCard;
-
-
-{/* <Box key={props.id} mb={'20px'} w='100%' onClick={(e)=>setReadmore(true)}>
-        <Flex flexDir={'column'} position='relative'> */}
-        {/* {readMore&&<ReadModal det={props.det} href={props.href}/>} */}
-            {/* <Box width={'350px'} h='250px' rounded={'md'} boxShadow={'xl'}>
-                <Image src={props.img} rounded={'md'} h='100%' w='100%'/>
-                <Image src='LogoBlack.png' boxSize={'100px'} borderRadius='50%' bg={'red'}/>
-            </Box>
-        </Flex>
-            <Text textAlign={'center'} fontSize='20px' fontFamily={'monospace'}>{props.name}</Text>
-    </Box> */}

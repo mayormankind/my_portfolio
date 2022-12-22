@@ -1,7 +1,7 @@
 import { Box, Flex, ListItem,List,Text,Circle, useMediaQuery, Spacer, IconButton, VStack, Image, useColorMode, Link, Icon } from '@chakra-ui/react';
 import React, { useState } from 'react'
-import TailorLink from '../LinkSrc/Link';
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
+import { Navs } from './Constants';
 function Header() {
   const [isBigScreen]=useMediaQuery("(min-width:600px)");
   const {colorMode, toggleColorMode} =useColorMode();
@@ -11,12 +11,6 @@ function Header() {
     setModal(true);
     console.log('clicked')
   }
-  const Navs = [
-    {lab:'About',refr:'/about',id:'0'},
-    {lab:'Services',refr:'/services',id:'1'},
-    {lab:'Projects',refr:'/projects',id:'3'},
-    {lab:'Social',refr:'/social',id:'4'}
-  ];
 
   const Toggle = (props)=>{
     return (
