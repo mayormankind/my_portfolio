@@ -17,7 +17,7 @@ function Footer() {
   }
   const NewsLetter=()=>{
     return(
-      <VStack spacing={'20px'} boxShadow={'xl'}>
+      <VStack spacing={'20px'} boxShadow={'xl'} bg='red' color='white'>
         <Text fontWeight={'semibold'}>Do you have something to tell me?</Text>
         <VStack spacing={'10px'} w='100%'>
           <Input type={'text'} w='95%' placeholder='Your Name'/>
