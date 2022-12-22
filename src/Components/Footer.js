@@ -17,7 +17,7 @@ function Footer() {
   }
   const NewsLetter=()=>{
     return(
-      <VStack spacing={'20px'} w='100%' boxShadow={'xl'}>
+      <VStack spacing={'20px'} boxShadow={'xl'}>
         <Text fontWeight={'semibold'}>Do you have something to tell me?</Text>
         <VStack spacing={'10px'} w='100%'>
           <Input type={'text'} w='95%' placeholder='Your Name'/>
@@ -44,7 +44,7 @@ function Footer() {
     )
   }
   return (
-    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='30px' flexDir={isBigScreen?'row':'column'}>
+    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='10px' color={'white'} flexDir={isBigScreen?'row':'column'}>
       <Box>
         <Image src='/images/MankindW.png' w={isBigScreen?'150px':'100px'}/>
       </Box>
