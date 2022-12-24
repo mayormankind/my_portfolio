@@ -4,7 +4,6 @@ import {FaForward} from 'react-icons/fa';
 
 function ProjectCard(props) {
     const [readMore,setReadmore] = useState(false);
-    const [isBigScreen] = useMediaQuery('(min-width:600px)');
     const {colorMode}=useColorMode();
     const isDark = colorMode=='dark';
     function BorderColorGen(){
@@ -23,11 +22,11 @@ const ReadModal = (props)=>{
     )
 }
   return (
-    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={isBigScreen?'1000px':''} maxW='1000px' bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
-        <Flex position='relative' flexDir={isBigScreen?'row':'column'} w='100%' maxW={'900px'} gridGap={isBigScreen?'30px':'0'} mx='auto'>
+    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'1000px',base:'100%'}} maxW='1000px' bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
+        <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap={{sm:'30px',base:'0'}} mx='auto'>
             <Image src={props.img} rounded={'md'} w='350px' h='200px' boxShadow={'xl'} mx={'auto'}/>
-            <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={isBigScreen?'250px':'100%'}>
-            <VStack p='20px' flex='2'>
+            <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={{sm:'250px',base:'100%'}}>
+            <VStack p={{sm:'20px',base:'10px'}} flex='2'>
                 <Box w={'100%'}>
                     <Text as={'h2'} textAlign='center' fontFamily={'open sans'} fontSize='25px' fontWeight={'bold'}>{props.name} -</Text>
                     <Text fontSize='15px' textAlign={'justify'}>{props.det}</Text>

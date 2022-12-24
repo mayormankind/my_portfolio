@@ -39,7 +39,7 @@ function Social() {
   return (
     <Box bg={'black'} color={'white'} w='100%' h='100%' p='30px'>
       <Heading textAlign={'center'}>Social</Heading>
-      <Flex justify={isBigScreen?'space-around':'space-between'} mt='30px' w='100%' h='100%' flexWrap='wrap'>
+      <Flex justify={{sm:'space-around',base:'space-between'}} mt='30px' w='100%' h='100%' flexWrap='wrap'>
         {Accounts.map(social=>(
           <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
               <Text fontSize={'2xl'} mr='3px'>{social.icon}</Text>

@@ -34,13 +34,12 @@ function Header() {
     <Flex w='100%' align={'center'} h='70px'>
       <Image h='100px' src={isDark ? '/LogoWhite.png':'/LogoBlack.png'}/>
         <Spacer/>
-        {isBigScreen ? (
-          <List display={'flex'} mr='10px' flexDir={isBigScreen ? 'row' :'column'}>
+        <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
             {Navs.map((nav)=>(
               <Link key={nav.id} href={nav.refr} ml='20px'>{nav.lab}</Link>
             ))}
           </List>
-        ):(<IconButton icon={<RiMenu3Fill/>} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>)}
+        <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
         <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
         {modal && <MobileTabs/>}
     </Flex>

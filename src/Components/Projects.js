@@ -16,16 +16,14 @@ function Projects() {
     ];
   return (
     <Box bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'} pb='20px' mb={'20px'} w='100%' h='100%'>
-        <Flex position='relative' ml={isBigScreen?'20px':'60px'} right='-20px'>
-            <Text as={'span'} p='10px' fontSize={isBigScreen? '70px':'5xl'} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
-            <Text as={'span'} position='absolute' top='1.7em' fontSize={isBigScreen? '2xl':'20px'} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
+        <Flex position='relative' ml={{sm:'20px',base:'60px'}} right='-20px'>
+            <Text as={'span'} p='10px' fontSize={{sm: '70px',base:'5xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
+            <Text as={'span'} position='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
        </Flex>
         <Flex as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'}>
             {
                 projectList.map(each=>(
                     <Box position={'relative'} key={each.id} px='70px'>
-                        {/* <Text as={'span'} zIndex='1' right={'-10px'} position='absolute' fontWeight='bold' fontSize={'60px'} bg='transparent' opacity={'.3'}>{`0${each.id}`}</Text>
-                        <Image src='LogoWhite.png' boxSize={'100px'} zIndex='1' right={'-2px'} top='10px' position='absolute'/> */}
                         <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                     </Box>
                 ))
