@@ -13,7 +13,6 @@ function Framework() {
         {id:'5',frname:'HTML',img:<FaHtml5/>,color:'red'},
         //{id:'6',frname:'CSS', img:<FaCss3Alt/>,color:'deepblue'},
     ];
-    const [isBigScreen] = useMediaQuery('(min-width:600px)')
     const {colorMode} = useColorMode();
     const isDark = colorMode=='dark';
     return (

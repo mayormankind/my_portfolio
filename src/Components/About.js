@@ -2,11 +2,10 @@ import React from 'react';
 import { Box, Flex, Text, Stack, Image, useMediaQuery, Button, useColorMode } from '@chakra-ui/react';
 
 export default function About() {
-  const [isBigScreen] = useMediaQuery('(min-width:600px)');
   const {colorMode}=useColorMode();
   const isDark = colorMode=='dark';
   return (
-      <Stack px={{sm:'0',base:'20px'}} mt={{sm:'0',base:'10px'}} position='relative'>
+      <Stack px={{sm:'0',base:'20px'}} mt={{sm:'0',base:'10px'}} position='relative' id='about'>
         <Flex p={{sm:'40px',base:'0'}} justify={'center'} align='center' flexDir={{sm:'row',base:'column'}}>
           <Box align='flex-start' w={{sm:'60%',base:'100%'}}>
             <Text fontSize={{sm:'3xl',base:'2xl'}}>Hello there, I'm </Text>

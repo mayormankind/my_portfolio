@@ -1,11 +1,9 @@
 import React from 'react';
 import {Box, Flex, Text, Image, Input, useMediaQuery, Heading,Icon, Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
-import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill} from 'react-icons/ri';
 import { Accounts, Navs } from './Constants';
 
 
 function Footer() {
-  const [isBigScreen] = useMediaQuery('(min-width:600px)')
     const Navigator = ()=>{
     return(
       <Flex flexDir={'column'} gap='20px'>
@@ -44,7 +42,7 @@ function Footer() {
     )
   }
   return (
-    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='10px' color={'white'} flexDir={{sm:'row',base:'column'}}>
+    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='10px' color={'white'} flexDir={{sm:'row',base:'column'}} id='contact'>
       <Box w={{sm:'10%',base:'100%'}}>
         <Image src='/images/MankindW.png' w={{sm:'150px',base:'100px'}} mx='auto'/>
       </Box>

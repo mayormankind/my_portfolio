@@ -1,9 +1,9 @@
 import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill} from 'react-icons/ri';
 export const Navs = [
-  {lab:'About',refr:'/about',id:'0'},
-  {lab:'Services',refr:'/services',id:'1'},
-  {lab:'Projects',refr:'/projects',id:'3'},
-  {lab:'Social',refr:'/social',id:'4'}
+  {lab:'About',refr:'#about',id:'0'},
+  {lab:'Services',refr:'#services',id:'1'},
+  {lab:'Projects',refr:'#projects',id:'3'},
+  {lab:'Social',refr:'#contact',id:'4'}
 ];
 export const Accounts=[
   {

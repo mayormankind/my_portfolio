@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
 import { Navs } from './Constants';
 function Header() {
-  const [isBigScreen]=useMediaQuery("(min-width:600px)");
   const {colorMode, toggleColorMode} =useColorMode();
   const isDark = colorMode==='dark';
   const [modal,setModal ] = useState(false);
