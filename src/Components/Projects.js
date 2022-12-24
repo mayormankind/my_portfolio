@@ -7,7 +7,7 @@ function Projects() {
   const isDark = colorMode=='dark';
     const [readMore,setReadmore] = useState(false);
     const projectList = [
-        {id:'1',projectName:'MyDo',projectDetails:'A todo app with other built in functions for personal use.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'1',projectName:'MyDo',projectDetails:'A todo app with other built in functions for personal use.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://mydo.vercel.app',frameworks:['react','chakraUI','react-icons']},
         {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
         {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app',frameworks:['react','chakraUI','react-icons']},
         {id:'5',projectName:"Mankind's Portfolio",projectDetails:'My personal potfolio that consists of projects i have worked on',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app',frameworks:['react','chakraUI','react-icons']},
