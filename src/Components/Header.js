@@ -1,4 +1,4 @@
-import { Box, Flex, ListItem,List,Text,Circle, useMediaQuery, Spacer, IconButton, VStack, Image, useColorMode, Link, Icon } from '@chakra-ui/react';
+import { Box, Flex, ListItem,List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link} from '@chakra-ui/react';
 import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
 import { Navs } from './Constants';

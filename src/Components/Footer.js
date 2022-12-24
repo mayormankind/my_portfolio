@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Flex, Text, Image, Input, useMediaQuery, Heading,Icon, Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
+import {Box, Flex, Text, Image, Input,Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
 import { Accounts, Navs } from './Constants';
 
 
@@ -8,7 +8,7 @@ function Footer() {
     return(
       <Flex flexDir={'column'} gap='20px'>
         {Navs.map(nav=>(
-          <Link as='li' listStyleType='none' color='white'>{nav.lab}</Link>
+          <Link href={nav.refr} listStyleType='none' color='white'>{nav.lab}</Link>
         ))}
       </Flex>
     )
