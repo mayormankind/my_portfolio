@@ -1,11 +1,10 @@
-import { Box, Flex, Image, Heading, useColorMode, useMediaQuery,Text, Link } from '@chakra-ui/react';
-import React,{useState} from 'react';
-import ProjectCard, { ReadModal } from '../LinkSrc/ProjectCard';
+import { Box, Flex, useColorMode,Text } from '@chakra-ui/react';
+import React from 'react';
+import ProjectCard from './ProjectCard';
 
 function Projects() {
     const {colorMode}=useColorMode();
-  const isDark = colorMode=='dark';
-    const [readMore,setReadmore] = useState(false);
+  const isDark = colorMode==='dark';
     const projectList = [
         {id:'1',projectName:'MyDo',projectDetails:'A todo app with other built in functions for personal use.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://mydo.vercel.app',frameworks:['react','chakraUI','react-icons']},
         {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
@@ -20,13 +19,11 @@ function Projects() {
             <Text as={'span'} position='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
        </Flex>
         <Flex as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'}>
-            {
-                projectList.map(each=>(
-                    <Box position={'relative'} key={each.id} px='70px'>
-                        <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
-                    </Box>
-                ))
-            }
+            {projectList.map(each=>(
+                <Box position={'relative'} key={each.id} px='20px'>
+                    <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                </Box>
+            ))}
         </Flex>
     </Box>
     )
