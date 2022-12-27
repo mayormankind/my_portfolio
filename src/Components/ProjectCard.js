@@ -13,9 +13,9 @@ function ProjectCard(props) {
     }
 
   return (
-    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'1000px',base:'100%'}} maxW='1000px' bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
+    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'100%'}} maxW='800px' bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
         <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap={{sm:'30px',base:'0'}} mx='auto'>
-            <Image src={props.img} rounded={'md'} w='350px' h='200px' boxShadow={'xl'} mx={'auto'}/>
+            <Image src={props.img} rounded={'md'} w='300px' h='200px' boxShadow={'xl'} mx={'auto'}/>
             <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={{sm:'250px',base:'100%'}}>
             <VStack p={{sm:'20px',base:'10px'}} flex='2'>
                 <Box w={'100%'}>
@@ -28,8 +28,8 @@ function ProjectCard(props) {
                     ))}
                 </HStack>
                 <Flex mx={'auto'} justify='space-between' w='100%'>
-                    <Button as={'a'} variant={'outline'} href={props.href}>View Demo</Button>
-                    <Button as={'a'} variant={'outline'} href={props.href}>Github Repo</Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>View Demo</Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>Github Repo</Button>
               </Flex>
             </VStack>
             </Box>

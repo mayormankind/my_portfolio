@@ -10,7 +10,7 @@ function Footer() {
     return(
       <Flex flexDir={'column'} gap='20px'>
         {Navs.map(nav=>(
-          <Link href={nav.refr} listStyleType='none' color='white'>{nav.lab}</Link>
+          <Link href={nav.refr} key={nav.id} listStyleType='none' color='white'>{nav.lab}</Link>
         ))}
       </Flex>
     )
