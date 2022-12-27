@@ -1,9 +1,11 @@
 import React from 'react';
-import {Box, Flex, Text, Image, Input,Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
+import {Box, Flex, Text, useColorMode, Image, Input,Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
 import { Accounts, Navs } from './Constants';
 
 
 function Footer() {
+  const {colorMode}=useColorMode();
+  const isDark = colorMode==='dark';
     const Navigator = ()=>{
     return(
       <Flex flexDir={'column'} gap='20px'>
@@ -22,7 +24,7 @@ function Footer() {
           <Input type={'text'} w='95%' placeholder='Your Email'/>
           <Textarea type={'text'} w='95%' placeholder='Your Message'/>
         </VStack>
-        <Button variant={'outline'} fontWeight='extrabold' w='95%'>SEND</Button>
+        <Button variant={'outline'} bg={isDark?'red.500':'black'} fontWeight='extrabold' w='95%'>SEND</Button>
       </VStack>
     )
   }
@@ -33,8 +35,7 @@ function Footer() {
         <Box>
           {Accounts.map(social=>(
             <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
-              <Text fontSize={'2xl'} mr='3px'>{social.icon}</Text>
-              <Text>{social.Sname}</Text>
+              <Text fontSize={'2xl'} mx='auto'>{social.icon}</Text>
             </Link>
           ))}
         </Box>
