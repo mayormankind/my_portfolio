@@ -13,7 +13,7 @@ function ProjectCard(props) {
     }
 
   return (
-    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'100%'}} maxW='800px' bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
+    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'370px'}} maxW={{sm:'800px',base:'370px'}} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
         <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap={{sm:'30px',base:'0'}} mx='auto'>
             <Image src={props.img} rounded={'md'} w='300px' h='200px' boxShadow={'xl'} mx={'auto'}/>
             <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={{sm:'250px',base:'100%'}}>
