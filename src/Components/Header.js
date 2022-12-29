@@ -30,7 +30,7 @@ function Header() {
   }
 
   return (
-    <Flex w='100%' align={'center'} h='70px'>
+    <Flex w='100%' align={'center'} h='70px' id='about'>
       <Image h='100px' src={isDark ? '/LogoWhite.png':'/LogoBlack.png'}/>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
