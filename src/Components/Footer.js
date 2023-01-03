@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Flex, Text, useColorMode, Image, Input,Link , Button, VStack, HStack, Textarea} from '@chakra-ui/react';
-import { Accounts, Navs } from './Constants';
+import { Navs } from './Constants';
+import { SocialIcons } from '../chakra/Styles';
 
 
 function Footer() {
@@ -31,23 +32,17 @@ function Footer() {
   const Socials=()=>{
     return(
       <Box>
-        <Text mb={'10px'} fontWeight='extrabold'>CONTACT ME</Text>
-        <Box>
-          {Accounts.map(social=>(
-            <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
-              <Text fontSize={'2xl'} mx='auto'>{social.icon}</Text>
-            </Link>
-          ))}
-        </Box>
+        <Text mb={'10px'} fontWeight='extrabold'>CONTACT/ FOLLOW ME</Text>
+        <SocialIcons />
       </Box>
     )
   }
   return (
-    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='10px' color={'white'} flexDir={{sm:'row',base:'column'}} id='contact'>
+    <Flex bg={'rgb(20,20,20)'} justify='space-around' w='100%' align={'center'} p='10px' color={'white'} flexDir={{sm:'row',base:'column'}} id='contact' className='scroll'>
       <Box w={{sm:'10%',base:'100%'}}>
         <Image src='/images/MankindW.png' w={{sm:'150px',base:'100px'}} mx='auto'/>
       </Box>
-      <HStack justify={'space-between'} w={{sm:'30%',base:'100%'}} m={{sm:'0',base:'20px'}}>
+      <HStack justify={'space-between'} p={{sm:'0',base:'0 20px'}} w={{sm:'30%',base:'100%'}} m={{sm:'0',base:'20px'}}>
         <Navigator/>
         <Socials/>
       </HStack>

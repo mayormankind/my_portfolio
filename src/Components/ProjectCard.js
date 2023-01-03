@@ -1,16 +1,10 @@
 import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
+import { BorderColorGen } from '../chakra/Styles';
 
 function ProjectCard(props) {
     const {colorMode}=useColorMode();
     const isDark = colorMode==='dark';
-    function BorderColorGen(){
-        var color = ''
-        const colors = ['red','green','blue','purple','orange','yellow','black','skyblue','magenta','cyan','deepblue','violet','indigo']
-        const colorIndex = Math.floor(Math.random()*13);
-        color = colors[colorIndex];
-        return (color);
-    }
 
   return (
     <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'370px'}} maxW={{sm:'800px',base:'370px'}} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>

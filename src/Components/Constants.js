@@ -2,7 +2,7 @@ import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill} fr
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
   {lab:'Services',refr:'#services',id:'1'},
-  {lab:'Projects',refr:'#projects',id:'3'},
+  {lab:'My Projects',refr:'#projects',id:'3'},
   {lab:'Social',refr:'#contact',id:'4'}
 ];
 export const Accounts=[
