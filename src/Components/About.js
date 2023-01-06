@@ -6,7 +6,7 @@ export default function About() {
   const isDark = colorMode=='dark';
   return (
       <Stack px={{sm:'0',base:'20px'}} mt={{sm:'0',base:'10px'}} position='relative'>
-        <Flex p={{sm:'40px',base:'0'}} justify={'center'} align='center' flexDir={{sm:'row',base:'column'}}>
+        <Flex p={{sm:'40px',base:'0'}} gridGap={{sm:'20px',base:'0'}} justify={'center'} align='center' flexDir={{sm:'row',base:'column'}}>
           <Box align='flex-start' w={{sm:'60%',base:'100%'}}>
             <Text fontSize={{sm:'3xl',base:'2xl'}}>Hello there, I'm </Text>
             <Text fontSize={{sm:'5xl',base:'3xl'}} fontWeight='bold'>Makinde Mayowa</Text>

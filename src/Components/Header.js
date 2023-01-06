@@ -36,7 +36,7 @@ function Header() {
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
             {Navs.map((nav)=>(
-              <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'semi-bold'} fontFamily='Tahoma'>{nav.lab}</Link>
+              <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'semi-bold'} fontFamily={'cursive'}>{nav.lab}</Link>
             ))}
           </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>

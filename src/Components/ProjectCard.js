@@ -1,5 +1,6 @@
 import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack } from '@chakra-ui/react';
 import React from 'react';
+import { RiGithubFill } from 'react-icons/ri';
 import { BorderColorGen } from '../chakra/Styles';
 
 function ProjectCard(props) {
@@ -23,7 +24,7 @@ function ProjectCard(props) {
                 </HStack>
                 <Flex mx={'auto'} justify='space-between' w='100%'>
                     <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>View Demo</Button>
-                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>Github Repo</Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}><RiGithubFill/>  Github Repo</Button>
               </Flex>
             </VStack>
             </Box>
