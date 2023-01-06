@@ -32,7 +32,7 @@ function Footer() {
   const Socials=()=>{
     return(
       <Box>
-        <Text mb={'10px'} fontWeight='extrabold'>CONTACT/ FOLLOW ME</Text>
+        <Text mb={'10px'} fontWeight='bold'>CONTACT/ FOLLOW ME</Text>
         <SocialIcons />
       </Box>
     )
@@ -46,7 +46,7 @@ function Footer() {
         <Navigator/>
         <Socials/>
       </HStack>
-      <NewsLetter/>
+      {/* <NewsLetter/> */}
     </Flex>
   )
 }

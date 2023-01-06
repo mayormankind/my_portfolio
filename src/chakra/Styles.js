@@ -13,7 +13,7 @@ export const SocialIcons = ()=>{
     return( 
         <Box display={'grid'} gridTemplateColumns={'repeat(3,1fr)'} gridGap='2px'>
           {Accounts.map(social=>(
-            <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px' border={`2px solid ${BorderColorGen()}`}>
+            <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
               <Text fontSize={'2xl'} mx='auto'>{social.icon}</Text>
             </Link>
           ))}

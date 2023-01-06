@@ -18,9 +18,9 @@ function Header() {
   }
   const MobileTabs = ()=>{
     return(
-      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'rgba(0,0,0,0.9)'} justify={'space-around'} display={{sm:'none',base:'flex'}}>
+      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'hsl(0, 0%, 0%)'} justify={'space-around'} display={{sm:'none',base:'flex'}}>
         <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
-        <Flex flexDir={'column'} p='30px 0' h='70%' w='100%' align='center' justify={'space-around'}>
+        <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
           {Navs.map(nav=>(
             <Link href={nav.refr} onClick={()=>setModal(false)} key={nav.id}><Text key={nav.id} color='white' mr={'10px'}>{nav.lab}</Text></Link>
           ))}

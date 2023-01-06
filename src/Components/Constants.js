@@ -1,4 +1,4 @@
-import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill} from 'react-icons/ri';
+import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill} from 'react-icons/ri';
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
   {lab:'Services',refr:'#services',id:'1'},
@@ -34,6 +34,12 @@ export const Accounts=[
     id:'5',
     Sname:'Facebook',
     icon:<RiFacebookFill/>,
+    ref:'https://www.facebook.com/profile.php?id=100081687606178'
+  },
+  {
+    id:'6',
+    Sname:'LinkedIn',
+    icon:<RiLinkedinBoxFill/>,
     ref:'https://www.facebook.com/profile.php?id=100081687606178'
   }
 ]
