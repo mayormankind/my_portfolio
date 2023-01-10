@@ -1,0 +1,74 @@
+import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack } from '@chakra-ui/react';
+import React from 'react';
+import { RiGithubFill } from 'react-icons/ri';
+import { BorderColorGen } from '../chakra/Styles';
+
+function ProjectCard(props) {
+    const {colorMode}=useColorMode();
+    const isDark = colorMode==='dark';
+
+  return (
+    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'370px'}} maxW={{sm:'800px',base:'370px'}} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
+        <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap={{sm:'30px',base:'0'}} mx='auto'>
+            <Image src={props.img} rounded={'md'} w='300px' h='200px' boxShadow={'xl'} mx={'auto'}/>
+            <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={{sm:'250px',base:'100%'}}>
+            <VStack p={{sm:'20px',base:'10px'}} flex='2'>
+                <Box w={'100%'}>
+                    <Text as={'h2'} textAlign='center' fontFamily={'open sans'} fontSize='25px' fontWeight={'bold'}>{props.name} -</Text>
+                    <Text fontSize='15px' textAlign={'justify'}>{props.det}</Text>
+                </Box>    
+                <HStack spacing={'7px'} flexWrap={'wrap'} w='100%' fontSize={'15px'}>
+                    {props.frames.map(tech=>(
+                        <Text border={`2px solid ${BorderColorGen()}`} textAlign='center' mb='5px' p='6px' rounded={'full'}>{tech}</Text>
+                    ))}
+                </HStack>
+                <Flex mx={'auto'} justify='space-between' w='100%'>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>View Demo</Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}><RiGithubFill/>  Github Repo</Button>
+              </Flex>
+            </VStack>
+            </Box>
+        </Flex>
+    </Box>
+    )
+}
+
+export default ProjectCard;
+
+
+
+
+import { Box, Flex, useColorMode,Text } from '@chakra-ui/react';
+import React from 'react';
+import ProjectCard from './ProjectCard';
+
+function Projects() {
+    const {colorMode}=useColorMode();
+  const isDark = colorMode==='dark';
+    const projectList = [
+        {id:'1',projectName:'MyDo',projectDetails:'A todo app with other built in functions for personal use.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p1_yyfza8.png',pref:'https://mydo.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'2',projectName:'HoistMe',projectDetails:'A CMS to create your own free business portfolio',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533483/portfolio/p3_oeeqme.png',pref:'https://lightgram-mod.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'4',projectName:'Lightgram WebApp',projectDetails:'A central web app for a community.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'5',projectName:"Mankind's Portfolio",projectDetails:'My personal potfolio that consists of projects i have worked on',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533472/portfolio/p5_m8xwvj.png',pref:'https://my-portfolio-delta-lac.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'6',projectName:"Pick n' Toe",projectDetails:'A TIC-TAC-TOE multiplayer that you could play game with your friends. Designed with javascript',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1673298543/portfolio/pnt1_gngvyz.png',pref:'https://tic-tac-toe-mayormankind.vercel.app',frameworks:['HTML','JavaScript','CSS/SCSS']},
+        {id:'7',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies (an engineering company',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app',frameworks:['react','chakraUI','react-icons']},
+        {id:'8',projectName:`HillTop Snake`,projectDetails:'A snake game',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://eit-website.vercel.app',frameworks:['react','chakraUI','react-icons']}
+    ];
+  return (
+    <Box bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'} pb='20px' mb={'20px'} w='100%' h='100%' id='projects' className='scroll'>
+        <Flex position='relative' ml={{sm:'20px',base:'60px'}} right='-20px'>
+            <Text as={'span'} p='10px' fontSize={{sm: '70px',base:'5xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
+            <Text as={'span'} position='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
+       </Flex>
+        <Flex as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'}>
+            {projectList.map(each=>(
+                <Box position={'relative'} key={each.id} px='20px'>
+                    <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                </Box>
+            ))}
+        </Flex>
+    </Box>
+    )
+}
+
+export default Projects;

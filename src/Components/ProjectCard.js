@@ -1,6 +1,6 @@
-import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack } from '@chakra-ui/react';
+import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack, IconButton } from '@chakra-ui/react';
 import React from 'react';
-import { RiGithubFill } from 'react-icons/ri';
+import { RiGithubFill, RiGlobalFill } from 'react-icons/ri';
 import { BorderColorGen } from '../chakra/Styles';
 
 function ProjectCard(props) {
@@ -8,11 +8,10 @@ function ProjectCard(props) {
     const isDark = colorMode==='dark';
 
   return (
-    <Box p={'20px'} mb={'30px'} key={props.id} rounded={'md'} minW={{sm:'800px',base:'370px'}} maxW={{sm:'800px',base:'370px'}} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
-        <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap={{sm:'30px',base:'0'}} mx='auto'>
-            <Image src={props.img} rounded={'md'} w='300px' h='200px' boxShadow={'xl'} mx={'auto'}/>
-            <Box flex='2' gridGap={'20px'} w={'100%'} h='100%' minH={{sm:'250px',base:'100%'}}>
-            <VStack p={{sm:'20px',base:'10px'}} flex='2'>
+    <Box p={{sm:'10px',base:'20px'}} mb={'20px'} key={props.id} rounded={'md'} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl'>
+        <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap='10px' mx='auto'>
+            <Image src={props.img} rounded={'md'} w={{sm:'260px',base:'300px'}} h='200px' boxShadow={'xl'} mx={'auto'}/>
+            <VStack w={'100%'} h='100%' spacing={'10px'} p={'10px'} minH={{sm:'250px',base:'100%'}} maxH={{sm:'300px',base:'100%'}}>
                 <Box w={'100%'}>
                     <Text as={'h2'} textAlign='center' fontFamily={'open sans'} fontSize='25px' fontWeight={'bold'}>{props.name} -</Text>
                     <Text fontSize='15px' textAlign={'justify'}>{props.det}</Text>
@@ -22,12 +21,11 @@ function ProjectCard(props) {
                         <Text border={`2px solid ${BorderColorGen()}`} textAlign='center' mb='5px' p='6px' rounded={'full'}>{tech}</Text>
                     ))}
                 </HStack>
-                <Flex mx={'auto'} justify='space-between' w='100%'>
-                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}>View Demo</Button>
-                    <Button as={'a'} variant={'outline'} bg={isDark?'red.400':'rgb(30,30,30)'} color='white' href={props.href}><RiGithubFill/>  Github Repo</Button>
+                <Flex mx={'auto'} justify='space-between' w='100%'>                    
+                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.href}><RiGlobalFill/></Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.href}><RiGithubFill/></Button>
               </Flex>
             </VStack>
-            </Box>
         </Flex>
     </Box>
     )
