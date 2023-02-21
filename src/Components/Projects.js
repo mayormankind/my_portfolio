@@ -23,9 +23,7 @@ function Projects() {
        </Flex>
         <Box as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={{sm:'repeat(auto-fit, minmax(500px, 1fr))',base:'repeat(auto-fit, minmax(390px, 1fr))'}} p={{sm:'20px',base:'0 10px'}}>
             {projectList.map(each=>(
-                // <Box key={each.id} px={'20px'} bg='blue'>
-                    <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
-                // </Box>
+                <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
             ))}
         </Box>
     </Box>
