@@ -25,6 +25,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#fff",
+  "theme_color": "linear(to-tr,black,red,black)",
   "background_color": "linear(to-tr,black,red,black)"
 }
