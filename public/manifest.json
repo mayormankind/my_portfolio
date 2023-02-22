@@ -1,6 +1,6 @@
 {
-  "short_name": "My Portfolio",
-  "name": "My Portfolio",
+  "short_name": "Mankind Portfolio",
+  "name": "Mankind Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#fff",
+  "background_color": "linear(to-tr,black,red,black)"
 }
