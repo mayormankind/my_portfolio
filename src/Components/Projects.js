@@ -16,14 +16,14 @@ function Projects() {
         {id:'8',projectName:`HillTop Snake`,projectDetails:'A snake game for PC. mobile version coming soon',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://hilltop-snake.vercel.app',github:'https://github.com/mayormankind/Hill-top_Snake',frameworks:['react','chakraUI','react-icons']}
     ];
   return (
-    <Box bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'} w='100%' h='100%' id='projects' className='scroll'>
-        <Flex position='relative' ml={{sm:'20px',base:'60px'}} right='-20px'>
-            <Text as={'span'} p='10px' fontSize={{sm: '70px',base:'5xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
-            <Text as={'span'} position='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(200, 500, 300)'}>Projects worked on</Text>
+    <Box  w='100%' h='100%' id='projects' className='scroll'>
+        <Flex position='relative' pl={'60px'}>
+            <Text as={'span'} fontSize={{sm: '70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
+            <Text as={'span'} pos='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'black'}>Projects worked on</Text>
        </Flex>
-        <Box as={'ul'} w='100%' h={'100%'} flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={{sm:'repeat(auto-fit, minmax(500px, 1fr))',base:'repeat(auto-fit, minmax(390px, 1fr))'}} p={{sm:'20px',base:'0 10px'}}>
+        <Box as={'ul'} w='100%' h={'100%'} mt='20px' flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={{sm:'repeat(auto-fit, minmax(500px, 1fr))',base:'repeat(auto-fit, minmax(390px, 1fr))'}} py='10px'>
             {projectList.map(each=>(
-                <ProjectCard id={each.id} name={each.projectName} href={each.pref} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                <ProjectCard id={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
             ))}
         </Box>
     </Box>

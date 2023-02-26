@@ -16,19 +16,6 @@ function Footer() {
       </Flex>
     )
   }
-  const NewsLetter=()=>{
-    return(
-      <VStack spacing={'20px'} boxShadow={'xl'} color='white' w={{sm:'30%',base:'100%'}}>
-        <Text fontWeight={'semibold'}>Do you have something to tell me?</Text>
-        <VStack spacing={'10px'} w='100%'>
-          <Input type={'text'} w='95%' placeholder='Your Name'/>
-          <Input type={'text'} w='95%' placeholder='Your Email'/>
-          <Textarea type={'text'} w='95%' placeholder='Your Message'/>
-        </VStack>
-        <Button variant={'outline'} bg={isDark?'red.500':'black'} fontWeight='extrabold' w='95%'>SEND</Button>
-      </VStack>
-    )
-  }
   const Socials=()=>{
     return(
       <Box>

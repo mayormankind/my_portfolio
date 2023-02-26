@@ -10,15 +10,17 @@ function Layout() {
   const {colorMode}=useColorMode();
   const isDark = colorMode=='dark';
   return (
-  <Flex justify='center' bg={(isDark)?'rgba(0,0,0,0.2)':'rgba(155,155,155,0.7'} w='100%' h={'100%'}>
-    <VStack w='100%' spacing={0} h='100%'>
+  <Flex justify='center' w='100%' h={'100%'}>
+    <Box w='100%' h='100%'>
         <About/>
-        <Framework/>
         <Projects/>
         <Footer/>
-    </VStack>
+    </Box>
   </Flex>
   )
 }
 
 export default Layout;
+
+// bg={isDark?'rgb(15,15,15)':'rgb(150,150,150)'}
+// bg={(isDark)?'rgba(0,0,0,0.2)':'rgba(155,155,155,0.7'}
