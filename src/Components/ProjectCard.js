@@ -14,9 +14,9 @@ function ProjectCard(props) {
             <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}>
                 <Box w={'100%'}>
                     <Text as={'h2'}  fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
-                    <Text fontSize='15px'>{props.det}</Text>
+                    <Text fontSize='12px'>{props.det}</Text>
                 </Box>    
-                <HStack flexWrap={'wrap'} w='100%' fontSize={'14px'}>
+                <HStack flexWrap={'wrap'} w='100%' fontSize={'12px'}>
                     {props.frames.map(tech=>(
                         <Text border={`2px solid ${BorderColorGen()}`}  lineHeight={'short'} p='6px' rounded={'full'}>{tech}</Text>
                     ))}
