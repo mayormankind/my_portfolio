@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode,Text } from '@chakra-ui/react';
+import { Box, Flex, useColorMode,Text, List } from '@chakra-ui/react';
 import React from 'react';
 import ProjectCard from './ProjectCard';
 
@@ -16,16 +16,16 @@ function Projects() {
         {id:'8',projectName:`HillTop Snake`,projectDetails:'A snake game for PC. mobile version coming soon',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1666756727/portfolio/etn_my3i4g.png',pref:'https://hilltop-snake.vercel.app',github:'https://github.com/mayormankind/Hill-top_Snake',frameworks:['react','chakraUI','react-icons']}
     ];
   return (
-    <Box  w='100%' h='100%' id='projects' className='scroll'>
+    <Box w='100%' h='100%' id='projects' className='scroll' mb={'30px'}>
         <Flex position='relative' pl={'60px'}>
             <Text as={'span'} fontSize={{sm: '70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
-            <Text as={'span'} pos='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'black'}>Projects worked on</Text>
+            <Text as={'span'} pos='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(10,10,10)'}>Projects worked on</Text>
        </Flex>
-        <Box as={'ul'} w='100%' h={'100%'} mt='20px' flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={{sm:'repeat(auto-fit, minmax(500px, 1fr))',base:'repeat(auto-fit, minmax(390px, 1fr))'}} py='10px'>
+        <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} p='10px'>
             {projectList.map(each=>(
                 <ProjectCard id={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
             ))}
-        </Box>
+        </List>
     </Box>
     )
 }

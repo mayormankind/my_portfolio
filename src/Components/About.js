@@ -11,7 +11,7 @@ export default function About() {
           <Box w={{sm:'60%',base:'100%'}}>
             <Text fontSize={{sm:'3xl',base:'2xl'}}>Hello there, I'm </Text>
             <Text fontSize={{sm:'5xl',base:'3xl'}} fontWeight='bold'>Makinde Mayowa</Text>
-            <Text textAlign={'justify'}>a skilled and experienced web developer with a passion for crafting innovative and visually stunning websites. With 3 years of experience in the industry, I have honed my skills in developing cutting-edge websites that not only look great but also function seamlessly. Check out my portfolio to see some of the incredible projects I have worked on.</Text>
+            <Text textAlign={'justify'}>A skilled and experienced web developer with a passion for crafting innovative and visually stunning websites. With 3 years of experience in the industry, I have honed my skills in developing cutting-edge websites that not only look great but also function seamlessly. Check out my portfolio to see some of the incredible projects I have worked on.</Text>
             <Button bg={isDark?'white':'rgb(30,30,30)'} color={isDark?'black':'white'} w={{sm:'80%',base:'100%'}} mt={'10px'} as='a' href='mailto:mayowamakinde23@gmail.com'>Mail Me</Button>
           </Box>
           <Image alt='Makinde Mayowa' src='/mayowa.jpg' objectFit={'contain'} boxSize={'250'} boxShadow='lg' alignSelf={'center'} mt={{sm:'0',base:'10px'}} borderRadius='50%' border={isDark?'10px solid silver':'10px solid black'}/>

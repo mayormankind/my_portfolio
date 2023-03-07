@@ -40,7 +40,7 @@ function Header() {
             ))}
           </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
-        <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
+        <IconButton m={'0 20px'} border='2px solid #84cdf7' isRound icon={<Toggle/>}></IconButton>
         {modal && <MobileTabs/>}
     </Flex>
   )

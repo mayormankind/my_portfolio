@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack, IconButton } from '@chakra-ui/react';
+import { Box, Flex, useColorMode, Image, Text, Button, HStack, VStack, IconButton, ListItem } from '@chakra-ui/react';
 import React from 'react';
 import { RiGithubFill, RiGlobalFill } from 'react-icons/ri';
 import { BorderColorGen } from '../chakra/Styles';
@@ -8,17 +8,17 @@ function ProjectCard(props) {
     const isDark = colorMode==='dark';
 
   return (
-    <Box p={{sm:'10px',base:'20px'}} mb={'20px'} w='100%' maxW={{sm:'750px',base:'320px'}} key={props.id} rounded={'xl'} bg={isDark?'rgb(40,40,40)':'rgb(200,200,200)'} boxShadow='xl' mx='auto'>
-        <Flex position='relative' flexDir={{sm:'row',base:'column'}} w='100%' maxW={'900px'} gridGap='10px' mx='auto'>
-            <Image src={props.img} rounded={'md'} w={{sm:'300px',base:'300px'}} h='200px' boxShadow={'xl'} mx={'auto'}/>
-            <VStack w={'100%'} h='100%' spacing={'15px'} p={'10px'} minH={{sm:'250px',base:'100%'}} maxH={{sm:'300px',base:'100%'}}>
+    <ListItem p={'20px'} w='100%' maxW={'350px'} key={props.id} rounded={'xl'} boxShadow='xl' bg={isDark?'#121212':'#e6e6e6'} mx='auto'>
+        <Flex position='relative' flexDir={'column'} w='100%' gridGap='10px' mx='auto'>
+            <Image src={props.img} rounded={'md'} w={'300px'} h='200px' boxShadow={'xl'} mx={'auto'}/>
+            <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}>
                 <Box w={'100%'}>
-                    <Text as={'h2'} textAlign='center' fontSize='25px' fontWeight={'bold'}>{props.name}</Text>
-                    <Text fontSize='15px' textAlign={'justify'}>{props.det}</Text>
+                    <Text as={'h2'}  fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
+                    <Text fontSize='15px'>{props.det}</Text>
                 </Box>    
-                <HStack flexWrap={'wrap'} w='100%' fontSize={{sm:'15px',base:'14px'}}>
+                <HStack flexWrap={'wrap'} w='100%' fontSize={'14px'}>
                     {props.frames.map(tech=>(
-                        <Text border={`2px solid ${BorderColorGen()}`} textAlign='center' lineHeight={'short'} p='6px' rounded={'full'}>{tech}</Text>
+                        <Text border={`2px solid ${BorderColorGen()}`}  lineHeight={'short'} p='6px' rounded={'full'}>{tech}</Text>
                     ))}
                 </HStack>
                 <HStack w='100%'>                    
@@ -27,7 +27,7 @@ function ProjectCard(props) {
               </HStack>
             </VStack>
         </Flex>
-    </Box>
+    </ListItem>
     )
 }
 
