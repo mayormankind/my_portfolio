@@ -2,6 +2,7 @@ import React from 'react';
 import { extendTheme, ColorModeScript, ChakraProvider } from '@chakra-ui/react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration.js";
 import App from './App';
 import { theme } from './chakra';
 
