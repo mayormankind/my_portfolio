@@ -19,7 +19,7 @@ function Projects() {
     <Box w='100%' h='100%' id='projects' className='scroll' mb={'30px'}>
         <Flex position='relative' pl={'60px'}>
             <Text as={'span'} fontSize={{sm: '70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
-            <Text as={'span'} pos='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} color={'rgb(10,10,10)'}>Projects worked on</Text>
+            <Text as={'span'} pos='absolute' top='1.7em' fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'}>Projects worked on</Text>
        </Flex>
         <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap' justify={'space-around'} display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} p='10px'>
             {projectList.map(each=>(
