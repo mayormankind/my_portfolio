@@ -6,7 +6,7 @@ import AddNewProject from './AddNewProject';
 
 
 function Footer() {
-  const [ newProject, setNewProject ] = useState(true);
+  const [ newProject, setNewProject ] = useState(false);
   const {colorMode}=useColorMode();
   const isDark = colorMode==='dark';
     const Navigator = ()=>{

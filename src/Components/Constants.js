@@ -1,9 +1,8 @@
-import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill, RiInstagramFill} from 'react-icons/ri';
+import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill, RiInstagramFill, RiYoutubeFill} from 'react-icons/ri';
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
-  {lab:'Services',refr:'#services',id:'1'},
-  {lab:'My Projects',refr:'#projects',id:'3'},
-  {lab:'Social',refr:'#contact',id:'4'}
+  {lab:'My Projects',refr:'#projects',id:'1'},
+  {lab:'Social',refr:'#contact',id:'2'}
 ];
 export const Accounts=[
   {
@@ -22,7 +21,7 @@ export const Accounts=[
     id:'3',
     Sname:'Whatsapp',
     icon:<RiWhatsappFill/>,
-    ref:'https://wa.me/07040829383'
+    ref:'https://wa.me/+2347040829383'
   },
   {
     id:'4',
@@ -47,5 +46,11 @@ export const Accounts=[
     Sname:'LinkedIn',
     icon:<RiLinkedinBoxFill/>,
     ref:'https://www.facebook.com/profile.php?id=100081687606178'
+  },
+  {
+    id:'8',
+    Sname:'Youtube',
+    icon:<RiYoutubeFill/>,
+    ref:'https://www.youtube.com/mankindDev'
   }
 ]

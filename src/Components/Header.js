@@ -18,7 +18,7 @@ function Header() {
   }
   const MobileTabs = ()=>{
     return(
-      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'hsl(0, 0%, 0%)'} justify={'space-around'} display={{sm:'none',base:'flex'}}>
+      <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'black'} justify={'space-around'} display={{sm:'none',base:'flex'}} transition={'5s ease in'}>
         <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
         <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
           {Navs.map(nav=>(
@@ -32,11 +32,11 @@ function Header() {
 
   return (
     <Flex w='100%' align={'center'} h='70px' id='about'>
-      <Image h='100px' src={isDark ? '/LogoWhite.png':'/LogoBlack.png'}/>
+      <Image h='100px' src={isDark ? 'images/LogoWhite.png':'images/LogoBlack.png'}/>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
             {Navs.map((nav)=>(
-              <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'semi-bold'}>{nav.lab}</Link>
+              <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'bold'}>{nav.lab}</Link>
             ))}
           </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
