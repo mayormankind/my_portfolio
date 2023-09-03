@@ -31,17 +31,19 @@ function Header() {
   }
 
   return (
-    <Flex w='100%' align={'center'} h='70px' id='about'>
-      <Image h='100px' src={isDark ? 'images/LogoWhite.png':'images/LogoBlack.png'}/>
+    <Flex w='100%' h='100%'>
+      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto'>
+        <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'}/>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
-            {Navs.map((nav)=>(
-              <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'bold'}>{nav.lab}</Link>
-            ))}
-          </List>
+          {Navs.map((nav)=>(
+            <Link key={nav.id} href={nav.refr} ml='20px' fontWeight={'semibold'}>{nav.lab}</Link>
+          ))}
+        </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
         <IconButton m={'0 20px'} border='2px solid #84cdf7' isRound icon={<Toggle/>}></IconButton>
         {modal && <MobileTabs/>}
+      </Flex>
     </Flex>
   )
 }

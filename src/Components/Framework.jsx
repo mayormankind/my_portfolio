@@ -14,8 +14,8 @@ function Framework() {
         {id:'6',frname:'CSS', img:<FaCss3Alt/>,color:'deepblue'},
     ];
     return (
-        <Flex w='100%' justify='center'>
-            <Flex flexDir={'column'} h={'100%'} w='100%' maxW={'1000px'} mb={'30px'}>
+        <Flex w='100%'>
+            <Flex flexDir={'column'} h={'100%'} w='100%' maxW={'1100px'} mx='auto' p='20px 0'>
                 <Flex position='relative' ml={{sm:'0',base:'30px'}} zIndex='2'>
                     <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.2'>F & L</Text>
                     <Text as={'span'} position='absolute' top='1.5em' fontSize={{sm:'2xl',base:'20px'}} textAlign={'left'}>Frameworks & Languages</Text>
