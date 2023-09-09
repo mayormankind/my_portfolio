@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from '@chakra-ui/theme-tools';
 
 export const theme = extendTheme({
     breakpoints:{
@@ -7,6 +8,16 @@ export const theme = extendTheme({
         lg: "960px",
         xl: "1200px",
         "2xl": "1536px"
+    },
+    styles: {
+        global: (props)=>({
+            body: {
+                bg: mode('white','black')(props),
+                color: mode('black','white')(props),
+                // fontFamily: 'Constantia',
+                // fontFamily: 'Harlow Solid Italic',
+            },
+        }),
     },
     colors: {
         dark:{

@@ -18,7 +18,7 @@ function Framework() {
             <Flex flexDir={'column'} h={'100%'} w='100%' maxW={'1100px'} mx='auto' p='20px 0'>
                 <Flex position='relative' ml={{sm:'0',base:'30px'}} zIndex='2'>
                     <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.2'>F & L</Text>
-                    <Text as={'span'} position='absolute' top='1.5em' fontSize={{sm:'2xl',base:'20px'}} textAlign={'left'}>Frameworks & Languages</Text>
+                    <Text as={'span'} position='absolute' top={{sm:'1.5em',base:'1em'}} fontSize={{sm:'2xl',base:'20px'}} textAlign={'left'}>Frameworks & Languages</Text>
                 </Flex>
                 <Flex h={'90px'} w='100%' justify={'space-between'} align='center' flexWrap={'wrap'}>
                     {Obj.map(each=>(

@@ -1,4 +1,4 @@
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Text, Link, Flex, keyframes } from "@chakra-ui/react";
 import { Accounts } from "../Components/Constants";
 
 
@@ -19,4 +19,19 @@ export const SocialIcons = ()=>{
           ))}
         </Box>
     );
+}
+
+export const SidebarAnimation = () =>{
+  const circleAnimate = keyframes`
+    0%{transform:translateY(0px)}
+    25%{transform:translateY(200px)}
+    50%{transform:translateY(400px)}
+    75%{transform:translateY(200px)}
+    100%{transform:translateY(0px)}
+  `;
+  return(
+    <Flex pos='absolute' top={{sm:'15%',base:'25%'}} left={{sm:'70px',base:'5px'}} h='400px' w='10px' bg='lightgray' opacity='0.2'>
+      <Box w='20px' pos='absolute' h='20px' bg='gray' top='0' left={'-50%'} borderRadius='50%' animation={`${circleAnimate} 5s linear infinite`}/>
+    </Flex>
+  )
 }
