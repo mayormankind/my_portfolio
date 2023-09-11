@@ -5,14 +5,13 @@ import { BorderColorGen } from '../chakra/Styles';
 import ImageVIewer from './ImageVIewer';
 
 function ProjectCard(props) {
-    const [ preview, setPreview ] = useState(true);
+    const [ preview, setPreview ] = useState(false);
     const [ image, setImage ] = useState('');
     const {colorMode}=useColorMode();
     const isDark = colorMode==='dark';
     const pippete = (image) =>{
         setPreview(true);
         setImage(image);
-        console.log(image)
     }
 
   return (
