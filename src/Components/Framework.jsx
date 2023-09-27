@@ -11,7 +11,7 @@ function Framework() {
         {id:'3',frname:'PHP',img:<FaPhp/>,color:'purple'},
         {id:'4',frname:'JS',img:<DiJavascript1/>,color:'yellow'},
         {id:'5',frname:'HTML',img:<FaHtml5/>,color:'red'},
-        {id:'6',frname:'CSS', img:<FaCss3Alt/>,color:'deepblue'},
+        {id:'6',frname:'CSS', img:<FaCss3Alt/>,color:'deepblue'}
     ];
     return (
         <Flex w='100%'>

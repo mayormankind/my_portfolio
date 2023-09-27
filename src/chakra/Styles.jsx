@@ -14,7 +14,7 @@ export const SocialIcons = ()=>{
         <Box display={'grid'} gridTemplateColumns={'repeat(3,1fr)'} gridGap='2px'>
           {Accounts.map(social=>(
             <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
-              <Text fontSize={'2xl'} mx='auto' color={'white'}>{social.icon}</Text>
+              <Text fontSize={'2xl'} mx='auto' color={'white'} _hover={{opacity:'0.6',transform:'translateY(-3px)'}}>{social.icon}</Text>
             </Link>
           ))}
         </Box>
@@ -33,5 +33,10 @@ export const SidebarAnimation = () =>{
     <Flex pos='absolute' top={{sm:'15%',base:'25%'}} left={{sm:'70px',base:'5px'}} h='400px' w='10px' bg='lightgray' opacity='0.2'>
       <Box w='20px' pos='absolute' h='20px' bg='gray' top='0' left={'-50%'} borderRadius='50%' animation={`${circleAnimate} 5s linear infinite`}/>
     </Flex>
+  )
+}
+export const ColoredText = ({children}) =>{
+  return(
+    <p style={{color:'#4270c0',display:'inline', fontWeight:'bold'}}>{children}</p>
   )
 }

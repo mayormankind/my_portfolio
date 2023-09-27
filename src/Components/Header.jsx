@@ -24,7 +24,7 @@ function Header() {
           <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
           <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
             {Navs.map(nav=>(
-              <Link href={nav.refr} onClick={()=>setModal(false)} key={nav.id}><Text key={nav.id} color='white' mr={'10px'}>{nav.lab}</Text></Link>
+              <Link href={nav.refr} onClick={()=>setModal(false)} key={nav.id}><Text key={nav.id} color='white' mr={'10px'}fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" fontWeight='semibold'>{nav.lab}</Text></Link>
             ))}
           </Flex>
           <SocialIcons display={'flex'}/>
@@ -34,12 +34,12 @@ function Header() {
 
   return (
     <Flex w='100%' h='100%'>
-      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' p={{sm:'0',base:'0 20px'}}>
+      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' pl={{sm:'0',base:'20px'}}>
         <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'}/>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
           {Navs.map((nav)=>(
-            <Link key={nav.id} href={nav.refr} ml='20px'>{nav.lab}</Link>
+            <Link key={nav.id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" fontWeight='semibold'>{nav.lab}</Link>
           ))}
         </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>

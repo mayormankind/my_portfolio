@@ -28,7 +28,7 @@ function Footer() {
     )
   }
   return (
-    <Flex bg={'rgb(20,20,20)'}  id='contact'>
+    <Flex bg={'rgb(20,20,20)'} id='contact'>
       <Flex justify='space-between' w='100%' align={'center'} p='10px' color={'white'} flexDir={{sm:'row',base:'column'}} className='scroll' maxW='1100px' mx='auto'>
         <Box w={{sm:'10%',base:'100%'}}>
           <Image src='images/Logow.png' w={{sm:'150px',base:'100px'}} mx='auto' onClick={()=>setNewProject(true)}/>

@@ -17,7 +17,7 @@ function ProjectCard(props) {
   return (
     <ListItem p={'20px'} w='100%' maxW={'350px'} key={props.id} rounded={'xl'} boxShadow='xl' bg={isDark?'#121212':'#e6e6e6'} mx='auto'>
         <Flex position='relative' flexDir={'column'} w='100%' gridGap='10px' mx='auto'>
-            <Image src={props.img} rounded={'md'} w={'300px'} h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)}/>
+            <Image src={props.img} rounded={'md'} w={'300px'} h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
             <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}>
                 <Box w={'100%'}>
                     <Text as={'h2'}  fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
