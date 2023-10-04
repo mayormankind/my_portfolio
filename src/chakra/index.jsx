@@ -1,7 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from '@chakra-ui/theme-tools';
 
+
 export const theme = extendTheme({
+    config : {
+        initialColorMode: 'dark',
+        useSystemColorMode: true,
+    },
     breakpoints:{
         xs: "480px",
         sm: "600px",
