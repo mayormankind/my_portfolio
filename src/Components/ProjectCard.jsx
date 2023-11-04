@@ -29,8 +29,8 @@ function ProjectCard(props) {
                     ))}
                 </HStack>
                 <HStack w='100%'>                    
-                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.href}><RiGlobalFill/></Button>
-                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.git}><RiGithubFill/></Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.href} p='7px' display='flex' alignItems={'center'} w='100%'><Text fontSize='small' mr='10px'>View project</Text><RiGlobalFill/></Button>
+                    <Button as={'a'} variant={'outline'} bg={isDark?'':'rgb(30,30,30)'} color='white' href={props.git} p='7px' display='flex' alignItems={'center'} w='100%'><Text fontSize='small' mr='10px'>Github link</Text><RiGithubFill/></Button>
               </HStack>
             </VStack>
         </Flex>

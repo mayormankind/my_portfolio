@@ -2,7 +2,7 @@ import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, Ri
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
   {lab:'My Projects',refr:'#projects',id:'1'},
-  {lab:'Social',refr:'#contact',id:'2'}
+  {lab:'Socials',refr:'#contact',id:'2'}
 ];
 export const Accounts=[
   {
@@ -39,13 +39,13 @@ export const Accounts=[
     id:'6',
     Sname:'Instagram',
     icon:<RiInstagramFill/>,
-    ref:'https://www.facebook.com/profile.php?id=100081687606178'
+    ref:'https://www.instagram'
   },
   {
     id:'7',
     Sname:'LinkedIn',
     icon:<RiLinkedinBoxFill/>,
-    ref:'https://www.facebook.com/profile.php?id=100081687606178'
+    ref:'https://www.linkedin.com/makinde-mayowa-4670a51bb'
   },
   {
     id:'8',

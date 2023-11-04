@@ -1,4 +1,4 @@
-import { Box, Flex, ListItem,List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, Slide} from '@chakra-ui/react';
+import { Box, Flex, List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes} from '@chakra-ui/react';
 import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
 import { SocialIcons } from '../chakra/Styles';
@@ -14,8 +14,13 @@ function Header() {
   }
 
   const Toggle = ()=>{
+    const toggleAnim = keyframes`
+    0%{transform:scale(1)}
+    50%{transform:translateY(2)}
+    100%{transform:translateY(1)}
+  `;
     return (
-      <Circle h='25px' w='25px' bg={colorMode=='dark' ?'white':'black'} onClick={toggleColorMode}/>
+      <Circle h='25px' w='25px' bg={colorMode=='dark' ?'white':'black'} onClick={toggleColorMode} animation={`${toggleAnim} 1s linear infinite`}/>
     )
   }
   const MobileTabs = ()=>{
@@ -39,7 +44,7 @@ function Header() {
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
           {Navs.map((nav)=>(
-            <Link key={nav.id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" fontWeight='semibold'>{nav.lab}</Link>
+            <Link key={nav.id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{nav.lab}</Link>
           ))}
         </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
