@@ -1,7 +1,7 @@
 import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill, RiInstagramFill, RiYoutubeFill} from 'react-icons/ri';
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
-  {lab:'My Projects',refr:'#projects',id:'1'},
+  {lab:'Portfolio',refr:'#projects',id:'1'},
   {lab:'Socials',refr:'#contact',id:'2'}
 ];
 export const Accounts=[

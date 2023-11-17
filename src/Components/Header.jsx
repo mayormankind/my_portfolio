@@ -12,15 +12,21 @@ function Header() {
     setModal(true);
     onToggle;
   }
+  const toggleAnim = keyframes`
+    0%{transform:scale(1)}
+    50%{transform:scale(2)}
+    100%{transform:scale(1)}
+  `;
 
   const Toggle = ()=>{
     const toggleAnim = keyframes`
     0%{transform:scale(1)}
-    50%{transform:translateY(2)}
-    100%{transform:translateY(1)}
+    50%{transform:scale(2)}
+    100%{transform:scale(1)}
   `;
     return (
-      <Circle h='25px' w='25px' bg={colorMode=='dark' ?'white':'black'} onClick={toggleColorMode} animation={`${toggleAnim} 1s linear infinite`}/>
+        <Box boxSize='25px' borderRadius={'50%'} pos='relative' bg={colorMode=='dark' ?'white':'black'} p='5px' onClick={toggleColorMode}  _before={{content:'""',width:'100%',height:'100%',position:'absolute',top:'0', borderRadius:'50%',left:'0',border:'2px solid #84cdf7',animation:`${toggleAnim} 1s linear infinite`}}>
+        </Box>
     )
   }
   const MobileTabs = ()=>{
@@ -48,7 +54,7 @@ function Header() {
           ))}
         </List>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
-        <IconButton m={'0 20px'} border='2px solid #84cdf7' isRound icon={<Toggle/>}></IconButton>
+        <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
         {modal && <MobileTabs/>}
       </Flex>
     </Flex>
