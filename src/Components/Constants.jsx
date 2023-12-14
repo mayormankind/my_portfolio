@@ -11,12 +11,12 @@ export const Accounts=[
     icon:<RiGithubFill/>,
     ref:'https://github.com/mayormankind'
   },
-  {
-    id:'2',
-    Sname:'Twitter',
-    icon:<RiTwitterFill/>,
-    ref:'https://mobile.twitter.com/MakindeMayowaO5'
-  },
+  // {
+  //   id:'2',
+  //   Sname:'Twitter',
+  //   icon:<RiTwitterFill/>,
+  //   ref:'https://mobile.twitter.com/MakindeMayowaO5'
+  // },
   {
     id:'3',
     Sname:'Whatsapp',

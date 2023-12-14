@@ -32,6 +32,7 @@ export const theme = extendTheme({
         light:{
             100: '#FAFAFA',
             700: '#FAFAFA',
-        }
+        },
+        
     }
 })

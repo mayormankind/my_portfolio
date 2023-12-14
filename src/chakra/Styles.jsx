@@ -37,6 +37,6 @@ export const SidebarAnimation = () =>{
 }
 export const ColoredText = ({children}) =>{
   return(
-    <p style={{color:'#1fd577',display:'inline', fontWeight:'bold'}}>{children}</p>
+    <p style={{color:'#00bfff',display:'inline', fontWeight:'bold'}}>{children}</p>
   )
 }

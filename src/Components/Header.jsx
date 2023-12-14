@@ -25,7 +25,7 @@ function Header() {
     100%{transform:scale(1)}
   `;
     return (
-        <Box boxSize='25px' borderRadius={'50%'} pos='relative' bg={colorMode=='dark' ?'white':'black'} p='5px' onClick={toggleColorMode}  _before={{content:'""',width:'100%',height:'100%',position:'absolute',top:'0', borderRadius:'50%',left:'0',border:'2px solid #84cdf7',animation:`${toggleAnim} 1s linear infinite`}}>
+        <Box boxSize='25px' borderRadius={'50%'} pos='relative' bg={colorMode=='dark' ?'white':'black'} p='5px' onClick={toggleColorMode}  _before={{content:'""',width:'100%',height:'100%',position:'absolute',top:'0', borderRadius:'50%',left:'0',border:'2px solid #00bfff',animation:`${toggleAnim} 1s linear infinite`}}>
         </Box>
     )
   }
@@ -46,7 +46,7 @@ function Header() {
   return (
     <Flex w='100%' h='100%'>
       <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' pl={{sm:'0',base:'20px'}}>
-        <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'}/>
+        <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'} loading='lazy'/>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
           {Navs.map((nav)=>(

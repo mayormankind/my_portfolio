@@ -17,7 +17,7 @@ export default function About() {
                 <Button bg={isDark?'white':'rgb(30,30,30)'} color={isDark?'black':'white'} w={{sm:'80%',base:'100%'}} mt={'10px'} as='a' href='mailto:mayowamakinde23@gmail.com' cursor='pointer'>Mail Me</Button>
             </Box>
             <Box borderRadius='50%' border={isDark?'10px solid silver':'10px solid black'} boxSize={'250px'} alignSelf={'center'} mt={{sm:'0',base:'10px'}}>
-                <Image alt='Makinde Mayowa' borderRadius='50%' src='/mayowa.jpg' objectFit={'cover'}/>
+                <Image alt='Makinde Mayowa' borderRadius='50%' src='/mayowa.jpg' loading='lazy' objectFit={'cover'}/>
             </Box>
         </Flex>
         <Framework/>

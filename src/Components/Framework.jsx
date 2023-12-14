@@ -14,7 +14,7 @@ function Framework() {
         {id:'6',frname:'CSS', img:<FaCss3Alt/>,color:'deepblue'}
     ];
     return (
-        <Flex w='100%'>
+        <Flex w='100%' p='0 10px'>
             <Flex flexDir={'column'} h={'100%'} w='100%' maxW={'1100px'} mx='auto' p='20px 0'>
                 <Flex position='relative' ml={{sm:'0',base:'30px'}} zIndex='2'>
                     <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.2'>F & L</Text>
