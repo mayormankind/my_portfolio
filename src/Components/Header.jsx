@@ -1,4 +1,5 @@
 import { Box, Flex, List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes} from '@chakra-ui/react';
+// import { Link } from 'react-router-dom';
 import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
 import { SocialIcons } from '../chakra/Styles';
@@ -45,8 +46,10 @@ function Header() {
 
   return (
     <Flex w='100%' h='100%'>
-      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' pl={{sm:'0',base:'20px'}}>
-        <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'} loading='lazy'/>
+      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' pl={{sm:'10px',base:'20px'}}>
+        <Link to='/'>
+          <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'} loading='lazy'/>
+        </Link>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
           {Navs.map((nav)=>(

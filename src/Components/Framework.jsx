@@ -22,7 +22,7 @@ function Framework() {
                 </Flex>
                 <Flex h={'90px'} w='100%' justify={'space-between'} align='center' flexWrap={'wrap'}>
                     {Obj.map(each=>(
-                        <Flex key={each.id} fontSize={{sm:'40px',base:'30px'}} lineHeight='10' flexDir={{sm:'row',base:'column'}} alignItems={'center'} w={{sm:'160px',base:'fit-content'}}>
+                        <Flex key={each.id} fontSize={{sm:'40px',base:'30px'}} lineHeight='10' flexDir={{sm:'row',base:'column'}} alignItems={'center'} w={{sm:'130px',base:'fit-content'}}>
                             <Text color={each.color} mr='5px'>{each.img}</Text>
                             <Text fontSize={'15px'} fontWeight='bold'>{each.frname}</Text>
                         </Flex>
