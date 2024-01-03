@@ -1,30 +1,33 @@
-import { Box, Flex, useColorMode,Text, List } from '@chakra-ui/react';
+import { Box, Flex, useColorMode,Text, List, keyframes } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { SidebarAnimation } from '../chakra/Styles';
 import ProjectCard from '../Components/ProjectCard';
-import { projectList } from '../Components/Constants';
+import { projectList, getProjects } from '../Components/Constants';
 import { Link } from 'react-router-dom';
-import { collection, onSnapshot } from 'firebase/firestore';
+import { RiArrowRightFill } from 'react-icons/ri';
 
 //46IRNG5SEP
 //dARK MOVIE
 
 function Projects() {
-    const [ projects, setProjects ] =  useState([]);
+    // const [ projects, setProjects ] =  useState([]);
+    
     // useEffect(()=>{
-    //     const unsub = onSnapshot(userRef,(snapshot)=>{
-    //         setProjects(
-    //           snapshot.docs.map((docs) =>{
-    //             return { ...docs.data() };
-    //           })
-    //         );
-    //       })
+    //     async function unsub(){
+    //         const call = await getProjects(setProjects);
+    //     } 
     //     return ()=>{
     //         unsub();
     //     }
     // },[])
+    // console.log(projects)
     const {colorMode}=useColorMode();
     const isDark = colorMode==='dark';
+    const animate = keyframes`
+        0%{transform:translateX(0px)}
+        50%{transform:translateX(20px)}
+        100%{transform:translateX(0px)}
+    `;
     
   return (
     <Box w='100%' h='100%' id='projects' className='scroll' mb={'30px'} pos='relative'>
@@ -33,12 +36,17 @@ function Projects() {
                 <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
                 <Text as={'span'} pos='absolute' top={{sm:'1.7em',base:'1em'}} fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} w='100%'>Projects worked on</Text>
             </Flex>
-            <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px'>
+            <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px' mb='20px'>
                 {projectList.map(each=>(
                     <ProjectCard id={each.id} key={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                 ))}
             </List>
-            <Link to='/projects'><Text textAlign='center' fontSize='15px'>View all projects</Text></Link>
+            <Link to='/projects'>
+                <Flex gap='3px' align='center' mx='auto' w='fit-content'>
+                    <Text fontSize='15px'>View all projects</Text>
+                    <Text as='i' animation={`${animate} 2s linear infinite`}><RiArrowRightFill/></Text>
+                </Flex>
+            </Link>
         </Flex>
         <SidebarAnimation/>
     </Box> 

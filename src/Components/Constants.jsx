@@ -1,9 +1,13 @@
+import { collection, onSnapshot } from 'firebase/firestore';
 import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill, RiInstagramFill, RiYoutubeFill} from 'react-icons/ri';
+import { db } from '../firebase';
+
 export const Navs = [
   {lab:'About',refr:'#about',id:'0'},
   {lab:'Portfolio',refr:'#projects',id:'1'},
   {lab:'Socials',refr:'#contact',id:'2'}
 ];
+
 export const Accounts=[
   {
     id:'1',
@@ -55,7 +59,6 @@ export const Accounts=[
   }
 ]
 
-
 export const projectList = [
   {id:'1',projectName:`EIT's Website`,projectDetails:'The official website of Essential Interlink Technologies (an engineering/electronics company)',projectImage:'images/etn.PNG',pref:'https://eit-website.vercel.app',github:'https://github.com/mayormankind/etn_website',frameworks:['react','chakraUI','react-icons']},
   {id:'3',projectName:'FaithStream',projectDetails:'A central web app for a readers community where books, videos, and stories are stored for reading and learning purposes.',projectImage:'https://res.cloudinary.com/dcesze7l8/image/upload/v1665533485/portfolio/p4_wz6gxs.png',pref:'https://lightgram-app.vercel.app',github:'https://github.com/mayormankind/lightgramApp',frameworks:['react','chakraUI','react-icons']},
@@ -67,3 +70,14 @@ export const projectList = [
   {id:'11',projectName:`WordList`,projectDetails:'A character randomizer that gives all possible combinations of a set of characters given.',projectImage:'images/wordlist.PNG',pref:'https://wordlist-rust.vercel.app',github:'https://github.com/mayormankind/wordList',frameworks:['HTML','CSS','javascript']},
   {id:'12',projectName:`Todo App`,projectDetails:'A simple To-do app for personal use.',projectImage:'images/todo.PNG',pref:'https://todo-with-ts-rho.vercel.app',github:'https://github.com/mayormankind/todoWithTs',frameworks:['HTML','CSS','typescript','javascript']},
 ];
+
+export const getProjects = (setData)=>{
+  const Ref = collection(db,'mankind-projects');
+  onSnapshot(Ref,(snapshot)=>{
+    setData(
+      snapshot.docs.map((docs)=>{
+        return { ...docs.data()};
+      })
+    )
+  })
+}
