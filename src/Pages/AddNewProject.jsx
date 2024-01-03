@@ -2,7 +2,7 @@ import { Button, Divider, Flex, Heading, IconButton, Input, useColorMode } from 
 import React,{useState} from 'react';
 import { FaHome } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import { V4 as uuid} from 'v4';
+import { v4 as uuid} from 'uuid';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { doc, setDoc } from 'firebase/firestore';
 
