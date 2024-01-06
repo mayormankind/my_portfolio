@@ -1,4 +1,4 @@
-import { Box, Flex, List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes} from '@chakra-ui/react';
+import { Box, Flex, List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes, Slide} from '@chakra-ui/react';
 // import { Link } from 'react-router-dom';
 import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
@@ -11,7 +11,7 @@ function Header() {
   const { isOpen, onToggle } = useDisclosure();
   function dispModal(){
     setModal(true);
-    onToggle;
+    onToggle();
   }
   const toggleAnim = keyframes`
     0%{transform:scale(1)}
@@ -32,6 +32,7 @@ function Header() {
   }
   const MobileTabs = ()=>{
     return(
+      <Slide in={isOpen}>
         <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'black'} justify={'space-around'} display={{sm:'none',base:'flex'}} transition={'.5s ease in'} left='0'>
           <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
           <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
@@ -41,6 +42,7 @@ function Header() {
           </Flex>
           <SocialIcons display={'flex'}/>
         </Flex>
+      </Slide>
     )
   }
 

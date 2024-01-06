@@ -14,14 +14,9 @@ export default function AllProjects() {
     const [ projects, setProjects ] =  useState([]);
     
     useEffect(()=>{
-        async function unsub(){
-            const call = await getProjects(setProjects);
-        } 
-        return ()=>{
-            unsub();
-        }
+        const call = getProjects(setProjects);
     },[])
-    console.log(projects)
+      
 
   return (
     <Box w='100%' h='100%' className='scroll' mb={'30px'} pos='relative'>

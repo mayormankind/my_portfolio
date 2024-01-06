@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode,Text, List, keyframes } from '@chakra-ui/react';
+import { Box, Flex, useColorMode,Text, List, keyframes, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { SidebarAnimation } from '../chakra/Styles';
 import ProjectCard from '../Components/ProjectCard';
@@ -41,12 +41,14 @@ function Projects() {
                     <ProjectCard id={each.id} key={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                 ))}
             </List>
-            <Link to='/projects'>
-                <Flex gap='3px' align='center' mx='auto' w='fit-content'>
-                    <Text fontSize='15px'>View all projects</Text>
-                    <Text as='i' animation={`${animate} 2s linear infinite`}><RiArrowRightFill/></Text>
-                </Flex>
-            </Link>
+            <Button variant='outline' as='flex' alignItems='center' mx='auto' w='fit-content' colorScheme={isDark ? 'white' : 'black'}>
+                    <Link to='/projects'>
+                        <Flex gap='3px' align='center' w='fit-content'>
+                            <Text fontSize='15px'>View all projects</Text>
+                            <Text as='i' animation={`${animate} 2s linear infinite`}><RiArrowRightFill/></Text>
+                        </Flex>
+                    </Link>
+            </Button>
         </Flex>
         <SidebarAnimation/>
     </Box> 
