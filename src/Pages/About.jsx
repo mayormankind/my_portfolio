@@ -8,8 +8,8 @@ export default function About() {
     const {colorMode}=useColorMode();
     const isDark = colorMode=='dark';
   return (
-    <Flex bg={isDark?'rgba(155,155,155,0.1)':'rgba(0,0,0,0.2)'} w='100%' h='100%' flexDir='column' pos='relative' id='about'>
-        <Flex mx='auto' w='100%' flexDir={{sm:'row',base:'column'}} maxW='1100px' justify={'space-between'} align='center' p='20px 0'>
+    <Box bg={isDark?'rgba(155,155,155,0.1)':'rgba(0,0,0,0.2)'} w='100%' h='100%' pos='relative' id='about' overflow='hidden'>
+        <Flex mx='auto' w='100%' flexDir={{sm:'row',base:'column'}} maxW='1100px' justify={'space-between'} align='center' p={{lg:'0',sm:'20px',base:'20px 0'}}>
             <Box w={{sm:'70%',base:'100%'}} p={{sm:'0 10px',base:'0 20px'}}>
                 <Text fontSize={{sm:'3xl',base:'2xl'}}>Hello there, I'm </Text>
                 <Text fontSize={{sm:'5xl',base:'3xl'}} fontWeight='bold'>Makinde Mayowa</Text>
@@ -23,8 +23,6 @@ export default function About() {
         <Framework/>
         <BackdropEffect/>
         <SidebarAnimation/>
-    </Flex>
+    </Box>
   )
 }
-// I work closely with clients to understand their needs and create custom solutions that exceed their expectations. Check out my portfolio to see some of the incredible projects I have worked on.
-// Whether you need a simple website or a complex web application, I have the expertise and creativity to bring your vision to life.

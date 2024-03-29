@@ -15,7 +15,7 @@ function ProjectCard(props) {
     }
 
   return (
-    <ListItem p={'20px'} w='100%' maxW={'350px'} rounded={'xl'} boxShadow='xl' cursor='pointer' bg={isDark?'#121212':'#d0d0d0'} mx='auto' _hover={{transform:'translateY(-20px)'}}>
+    <ListItem p={'20px'} w='100%' maxW={'350px'} rounded={'xl'} boxShadow='xl' cursor='pointer' bg={isDark?'#121212':'#d0d0d0'} mx='auto' key={props.id}>
         <Flex pos='relative' flexDir={'column'} w='100%' gap='10px' mx='auto'>
             <Image src={props.img} rounded={'md'} w={'300px'} loading='lazy' h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
             <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}>

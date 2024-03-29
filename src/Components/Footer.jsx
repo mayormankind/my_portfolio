@@ -9,8 +9,8 @@ function Footer() {
     const Navigator = ()=>{
     return(
       <Flex gap='20px' fontSize={'13px'}>
-        {Navs.map(nav=>(
-          <Link href={nav.refr} key={nav.id} listStyleType='none' color='white' _hover={{transform:'translateY(-10px)'}}>{nav.lab}</Link>
+        {Navs.map((nav, id)=>(
+          <Link href={nav.refr} key={id} listStyleType='none' color='white' _hover={{transform:'translateY(-5px)'}}>{nav.lab}</Link>
         ))}
       </Flex>
     )
@@ -22,8 +22,8 @@ function Footer() {
           <Image src='images/Logow.png' loading='lazy' w={{sm:'150px',base:'100px'}} mx='auto'/>
         </Box>
         <Flex>
-            {Accounts.map(social=>(
-              <Link key={social.id} href={social.ref} display={'flex'} align={'center'} p='10px'>
+            {Accounts.map((social,id)=>(
+              <Link key={id} href={social.ref} display={'flex'} align={'center'} p='10px'>
                 <Text fontSize={'2xl'} mx='auto' color={'white'} _hover={{opacity:'0.6',transform:'translateY(-3px)'}}>{social.icon}</Text>
               </Link>
             ))}

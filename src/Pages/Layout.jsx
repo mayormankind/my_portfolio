@@ -9,12 +9,12 @@ function Layout() {
   const {colorMode}=useColorMode();
   const isDark = colorMode=='dark';
   return (
-  <Flex justify='center' w='100%' h={'100%'} flexDir='column' overflowX={'hidden'}>
+  <Box w='100%' h={'100%'}>
     <Header/>
     <About/>
     <Projects/>
     <Footer/>
-  </Flex>
+  </Box>
   )
 }
 

@@ -37,8 +37,8 @@ function Projects() {
                 <Text as={'span'} pos='absolute' top={{sm:'1.7em',base:'1em'}} fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} w='100%'>Projects worked on</Text>
             </Flex>
             <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px' mb='20px'>
-                {projectList.map(each=>(
-                    <ProjectCard id={each.id} key={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                {projectList.map((each,id)=>(
+                    <ProjectCard id={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                 ))}
             </List>
             <Button variant='outline' as='flex' alignItems='center' mx='auto' w='fit-content' colorScheme={isDark ? 'white' : 'black'}>

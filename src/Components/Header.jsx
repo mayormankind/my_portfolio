@@ -1,5 +1,4 @@
-import { Box, Flex, List,Text,Circle, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes, Slide} from '@chakra-ui/react';
-// import { Link } from 'react-router-dom';
+import { Box, Flex, List, Text,  Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes, Slide} from '@chakra-ui/react';
 import React, { useState } from 'react'
 import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
 import { SocialIcons } from '../chakra/Styles';
@@ -10,14 +9,10 @@ function Header() {
   const [modal,setModal ] = useState(false);
   const { isOpen, onToggle } = useDisclosure();
   function dispModal(){
-    setModal(true);
+    setModal(!modal);
     onToggle();
+    console.log('hey its working!')
   }
-  const toggleAnim = keyframes`
-    0%{transform:scale(1)}
-    50%{transform:scale(2)}
-    100%{transform:scale(1)}
-  `;
 
   const Toggle = ()=>{
     const toggleAnim = keyframes`
@@ -30,37 +25,31 @@ function Header() {
         </Box>
     )
   }
-  const MobileTabs = ()=>{
-    return(
-      <Slide in={isOpen}>
-        <Flex pos={'fixed'} flexDir={'column'} align={'center'} zIndex='100' h='100%' w='100%' bottom={0} bg={'black'} justify={'space-around'} display={{sm:'none',base:'flex'}} transition={'.5s ease in'} left='0'>
-          <IconButton icon={<RiCloseFill/>} variant='ghost' fontSize='40px' mt='5px' onClick={()=>setModal(false)} color='white'/>
-          <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
-            {Navs.map(nav=>(
-              <Link href={nav.refr} onClick={()=>setModal(false)} key={nav.id}><Text key={nav.id} color='white' mr={'10px'}fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" fontWeight='semibold'>{nav.lab}</Text></Link>
-            ))}
-          </Flex>
-          <SocialIcons display={'flex'}/>
-        </Flex>
-      </Slide>
-    )
-  }
 
   return (
-    <Flex w='100%' h='100%'>
-      <Flex w='100%' align={'center'} h='70px' id='about' maxW='1100px' mx='auto' pl={{sm:'10px',base:'20px'}}>
+    <Flex w='100%' h='100%' pos='sticky' top='0' zIndex='50' bg='black'>
+      <Flex w='100%' align={'center'} h='70px' maxW='1100px' mx='auto' pl={{sm:'10px',base:'20px'}}>
         <Link to='/'>
           <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'} loading='lazy'/>
         </Link>
+        <Slide in={isOpen} zIndex='100'>
+          <Flex flexDir={'column'} align={'center'} h='100%' w='100%' pos={'fixed'} top='0' left='0' right='0' bottom={'0'} bg={'black'} justify={'space-around'}>
+            <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
+              {Navs.map((nav,id)=>(
+                <Link href={nav.refr} key={id} onClick={dispModal} fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" color='white'>{nav.lab}</Link>
+              ))}
+            </Flex>
+            <SocialIcons display={'flex'}/>
+          </Flex>
+        </Slide>
         <Spacer/>
         <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
-          {Navs.map((nav)=>(
-            <Link key={nav.id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{nav.lab}</Link>
+          {Navs.map((nav,id)=>(
+            <Link key={id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{nav.lab}</Link>
           ))}
         </List>
-        <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'block'}} onClick={(!modal)? dispModal:()=>setModal(false)} fontSize='25px' variant={'ghost'} mt='5px'/>
+        <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'flex'}} onClick={dispModal} zIndex='2000' color='red' fontSize='25px' variant={'ghost'}/>
         <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
-        {modal && <MobileTabs/>}
       </Flex>
     </Flex>
   )
