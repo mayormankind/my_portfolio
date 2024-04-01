@@ -1,4 +1,4 @@
-import { Box, Flex, useColorMode,Text, List, keyframes, Button } from '@chakra-ui/react';
+import { Box, Flex, Grid, useColorMode, Text, keyframes, Button } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { SidebarAnimation } from '../chakra/Styles';
 import ProjectCard from '../Components/ProjectCard';
@@ -36,12 +36,12 @@ function Projects() {
                 <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>Projects</Text>
                 <Text as={'span'} pos='absolute' top={{sm:'1.7em',base:'1em'}} fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} w='100%'>Projects worked on</Text>
             </Flex>
-            <List gridGap={'30px'} w='100%' h={'100%'} mt='20px' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px' mb='20px'>
+            <Grid gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} justifyItems={'center'} w='100%' gap='30px' px='10px' m='20px 0'>
                 {projectList.map((each,id)=>(
-                    <ProjectCard id={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                    <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
                 ))}
-            </List>
-            <Button variant='outline' as='flex' alignItems='center' mx='auto' w='fit-content' colorScheme={isDark ? 'white' : 'black'}>
+            </Grid>
+            <Button variant='outline' alignItems='center' mx='auto' w='fit-content' colorScheme={isDark ? 'white' : 'black'} borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} p='0 20px'>
                     <Link to='/projects'>
                         <Flex gap='3px' align='center' w='fit-content'>
                             <Text fontSize='15px'>View all projects</Text>

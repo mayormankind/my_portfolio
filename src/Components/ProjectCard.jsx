@@ -15,12 +15,12 @@ function ProjectCard(props) {
     }
 
   return (
-    <ListItem p={'20px'} w='100%' maxW={'350px'} rounded={'xl'} boxShadow='xl' cursor='pointer' bg={isDark?'#121212':'#d0d0d0'} mx='auto' key={props.id}>
+    <Box p={'20px'} w='100%' maxW={'350px'} rounded={'xl'} boxShadow='xl' cursor='pointer' bg={isDark?'#121212':'#d0d0d0'} mx='auto'>
         <Flex pos='relative' flexDir={'column'} w='100%' gap='10px' mx='auto'>
             <Image src={props.img} rounded={'md'} w={'300px'} loading='lazy' h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
-            <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}>
+            <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}> 
                 <Box w={'100%'}>
-                    <Text as={'h2'}  fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
+                    <Text as={'h2'} fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
                     <Text fontSize='12px'>{props.det}</Text>
                 </Box>    
                 <HStack flexWrap={'wrap'} w='100%' fontSize={'12px'}>
@@ -29,13 +29,13 @@ function ProjectCard(props) {
                     ))}
                 </HStack>
                 <HStack w='100%'>                    
-                    <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.href} p='7px' display='flex' alignItems={'center'} w='100%'><Text fontSize='small' mr='10px'>View project</Text><RiGlobalFill/></Button>
-                    <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.git} p='7px' display='flex' alignItems={'center'} w='100%'><Text fontSize='small' mr='10px'>Github link</Text><RiGithubFill/></Button>
+                    <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.href} fontSize='xs' w='100%' borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontWeight='normal' rightIcon={<RiGlobalFill/>}>View demo</Button>
+                    <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.git} borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontSize='xs' w='100%' fontWeight='normal' rightIcon={<RiGithubFill/>}>Github repo</Button>
               </HStack>
             </VStack>
         </Flex>
         {preview && <ImageVIewer img={image} setPreview={setPreview}/>}
-    </ListItem>
+    </Box>
     )
 }
 

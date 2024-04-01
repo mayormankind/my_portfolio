@@ -21,13 +21,13 @@ function Header() {
     100%{transform:scale(1)}
   `;
     return (
-        <Box boxSize='25px' borderRadius={'50%'} pos='relative' bg={colorMode=='dark' ?'white':'black'} p='5px' onClick={toggleColorMode}  _before={{content:'""',width:'100%',height:'100%',position:'absolute',top:'0', borderRadius:'50%',left:'0',border:'2px solid #00bfff',animation:`${toggleAnim} 1s linear infinite`}}>
+        <Box boxSize='25px' borderRadius={'50%'} pos='relative' bg={isDark ?'white':'black'} p='5px' onClick={toggleColorMode}  _before={{content:'""',width:'100%',height:'100%',position:'absolute',top:'0', borderRadius:'50%',left:'0',border:'2px solid #00bfff',animation:`${toggleAnim} 1s linear infinite`}}>
         </Box>
     )
   }
 
   return (
-    <Flex w='100%' h='100%' pos='sticky' top='0' zIndex='50' bg='black'>
+    <Flex w='100%' h='100%' pos='sticky' top='0' zIndex='50' bg={isDark ? 'black' : 'white'}>
       <Flex w='100%' align={'center'} h='70px' maxW='1100px' mx='auto' pl={{sm:'10px',base:'20px'}}>
         <Link to='/'>
           <Image h='100px' src={isDark ? 'images/Logow.png':'images/Logob.png'} loading='lazy'/>
@@ -48,7 +48,7 @@ function Header() {
             <Link key={id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{nav.lab}</Link>
           ))}
         </List>
-        <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'flex'}} onClick={dispModal} zIndex='2000' color='red' fontSize='25px' variant={'ghost'}/>
+        <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'flex'}} onClick={dispModal} zIndex='2000' fontSize='25px' variant={'ghost'}/>
         <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
       </Flex>
     </Flex>
