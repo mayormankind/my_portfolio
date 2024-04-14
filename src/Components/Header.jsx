@@ -1,8 +1,9 @@
-import { Box, Flex, List, Text,  Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes, Slide} from '@chakra-ui/react';
+import { Box, Flex, Spacer, IconButton, Image, useColorMode, Link, useDisclosure, keyframes, Slide} from '@chakra-ui/react';
 import React, { useState } from 'react'
-import {RiCloseFill,RiMenu3Fill} from 'react-icons/ri';
+import { RiMenu3Fill} from 'react-icons/ri';
 import { SocialIcons } from '../chakra/Styles';
 import { Navs } from './Constants';
+import { Reveal } from './Reveal';
 function Header() {
   const {colorMode, toggleColorMode} =useColorMode();
   const isDark = colorMode==='dark';
@@ -34,20 +35,24 @@ function Header() {
         </Link>
         <Slide in={isOpen} zIndex='100'>
           <Flex flexDir={'column'} align={'center'} h='100%' w='100%' pos={'fixed'} top='0' left='0' right='0' bottom={'0'} bg={'black'} justify={'space-around'}>
-            <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'}>
+            <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'} fontWeight='semibold'>
               {Navs.map((nav,id)=>(
-                <Link href={nav.refr} key={id} onClick={dispModal} fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" color='white'>{nav.lab}</Link>
+                <Reveal key={id}>
+                  <Link href={nav.refr} onClick={dispModal} color='white' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
+                </Reveal>
               ))}
             </Flex>
             <SocialIcons display={'flex'}/>
           </Flex>
         </Slide>
         <Spacer/>
-        <List display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}}>
+        <Flex display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}} gap='20px'>
           {Navs.map((nav,id)=>(
-            <Link key={id} href={nav.refr} ml='20px' fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{nav.lab}</Link>
+            <Reveal key={id}>
+              <Link href={nav.refr} fontWeight='semibold' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
+            </Reveal>
           ))}
-        </List>
+        </Flex>
         <IconButton icon={<RiMenu3Fill/>} display={{sm:'none',base:'flex'}} onClick={dispModal} zIndex='2000' fontSize='25px' variant={'ghost'}/>
         <IconButton m={'0 20px'} isRound icon={<Toggle/>}></IconButton>
       </Flex>

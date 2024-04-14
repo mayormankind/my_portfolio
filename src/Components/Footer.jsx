@@ -24,7 +24,7 @@ function Footer() {
         <Flex>
             {Accounts.map((social,id)=>(
               <Link key={id} href={social.ref} display={'flex'} align={'center'} p='10px'>
-                <Text fontSize={'2xl'} mx='auto' color={'white'} _hover={{opacity:'0.6',transform:'translateY(-3px)'}}>{social.icon}</Text>
+                <Text fontSize={'xl'} mx='auto' color={'white'} _hover={{opacity:'0.6',transform:'translateY(-3px)'}}>{social.icon}</Text>
               </Link>
             ))}
         </Flex>

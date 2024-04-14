@@ -20,20 +20,15 @@ export const theme = extendTheme({
             body: {
                 bg: mode('white','black')(props),
                 color: mode('black','white')(props),
-                // fontFamily: 'Constantia',
-                // fontFamily: 'Harlow Solid Italic',
+                fontFamily: 'poppins',
             },
         }),
     },
     colors: {
-        dark:{
-            100: '#262626',
-            700: '#262626'
-        },
-        light:{
-            100: '#FAFAFA',
-            700: '#FAFAFA',
-        },
-        
+        skyBlue: '#E7F0FF',
+        faintBlue: '#0A6DE4',    
+        darkGray: '#676E7E',
+        faintText: '#8B9BB0',
+        blueText: '#0D6EFD',    
     }
 })

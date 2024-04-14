@@ -30,7 +30,6 @@ function BackdropEffect() {
         const Lightcolor =['red.100','blue.100','cyan','green.100','orange','purple.100','yellow']
         const Darkcolor =['red.300','blue.300','cyan','green.300','orange','purple.300','yellow']
         let randomIndex = Math.floor(Math.random()* 6);
-        // let pickedColor = Darkcolor[randomIndex];
         let pickedColor = isDark ? Lightcolor[randomIndex] : Darkcolor[randomIndex];
         return pickedColor;
     }

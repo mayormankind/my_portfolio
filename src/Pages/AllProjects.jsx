@@ -7,6 +7,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
+import { Reveal } from '../Components/Reveal';
 
 
 export default function AllProjects() {
@@ -27,21 +28,33 @@ export default function AllProjects() {
         </Link>
         <Flex mx='auto' maxW='1100px' gap='30px' flexDir='column' w='100%'>
             <Flex position='relative' mx={'auto'}>
-                <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>My Jacket</Text>
-                <Text as={'span'} pos='absolute' top={{sm:'1.7em',base:'1em'}} fontSize={{sm: '2xl',base:'20px'}} textAlign={'left'} w='100%'>All of it in one place</Text>
+                <Reveal>
+                    <Text as={'span'} fontSize={{sm:'70px',base:'4xl'}} fontWeight='bold' textAlign={'left'} opacity='.4'>My Jacket</Text>
+                </Reveal>
+                <Reveal>
+                    <Text as={'span'} pos='absolute' top={{sm:'1.7em',base:'1em'}} fontSize={{sm: '2xl',base:'20px'}}   textAlign={'left'} w='100%'>All of it in one place</Text>
+                </Reveal>
             </Flex>
             <Divider/>
-            <Text fontSize={{sm:'25px',base:'20px'}} fontWeight={'bold'} p={{sm:'0 20px',base:'0 10px'}}>Recent projects</Text>
+            <Reveal>
+                <Text fontSize={{sm:'25px',base:'20px'}} fontWeight={'bold'} p={{sm:'0 20px',base:'0 10px'}}>Recent projects</Text>
+            </Reveal>
             <List gridGap={'30px'} w='100%' h={'100%'} m='20px 0' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px'>
                 {projects && projects.map(project=>(
-                    <ProjectCard id={project.pid} key={project.pid} name={project.title} href={project.hostlink} git={project.gitlink} img={project.image} det={project.overview} frames={project.tools.trim().split(' ')}/>
+                    <Reveal key={project.pid}>
+                        <ProjectCard id={project.pid} name={project.title} href={project.hostlink} git={project.gitlink} img={project.image} det={project.overview} frames={project.tools.trim().split(' ')}/>
+                    </Reveal>
                 ))}
             </List>
             <Divider/>
-            <Text fontSize={{sm:'25px',base:'20px'}} fontWeight={'bold'} p={{sm:'0 20px',base:'0 10px'}}>Other projects</Text>
+            <Reveal>
+                <Text fontSize={{sm:'25px',base:'20px'}} fontWeight={'bold'} p={{sm:'0 20px',base:'0 10px'}}>Other projects</Text>
+            </Reveal>
             <List gridGap={'30px'} w='100%' h={'100%'} m='20px 0' flexWrap='wrap'  display={'grid'} gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} px='10px'>
                 {projectList.map(each=>(
-                    <ProjectCard id={each.id} key={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                    <Reveal key={each.id}>
+                        <ProjectCard id={each.id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                    </Reveal>
                 ))}
             </List>
         </Flex>

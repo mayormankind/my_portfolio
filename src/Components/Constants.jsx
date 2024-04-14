@@ -3,6 +3,7 @@ import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, Ri
 import { db } from '../firebase';
 
 export const Navs = [
+  {lab:'Home',refr:'#home'},
   {lab:'About',refr:'#about'},
   {lab:'Portfolio',refr:'#projects'},
   {lab:'Socials',refr:'#contact'}
@@ -21,24 +22,24 @@ export const Accounts=[
   //   icon:<RiTwitterFill/>,
   //   ref:'https://mobile.twitter.com/MakindeMayowaO5'
   // },
-  {
-    id:'3',
-    Sname:'Whatsapp',
-    icon:<RiWhatsappFill/>,
-    ref:'https://wa.me/+2347040829383'
-  },
+  // {
+  //   id:'3',
+  //   Sname:'Whatsapp',
+  //   icon:<RiWhatsappFill/>,
+  //   ref:'https://wa.me/+2347040829383'
+  // },
   {
     id:'4',
     Sname:'Email',
     icon:<RiMailFill/>,
     ref:'mailto:mayowamakinde23@gmail.com?subject=SendMail&body=Description'
   },
-  {
-    id:'5',
-    Sname:'Facebook',
-    icon:<RiFacebookFill/>,
-    ref:'https://www.facebook.com/profile.php?id=100081687606178'
-  },
+  // {
+  //   id:'5',
+  //   Sname:'Facebook',
+  //   icon:<RiFacebookFill/>,
+  //   ref:'https://www.facebook.com/profile.php?id=100081687606178'
+  // },
   {
     id:'6',
     Sname:'Instagram',

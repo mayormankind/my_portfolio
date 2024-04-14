@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Flex, useColorMode } from '@chakra-ui/react';
 import Header from '../Components/Header';
 import About from './About';
+import Home from './Home';
 import Projects from './Projects';
 import Footer from '../Components/Footer';
 
@@ -11,6 +12,7 @@ function Layout() {
   return (
   <Box w='100%' h={'100%'}>
     <Header/>
+    <Home/>
     <About/>
     <Projects/>
     <Footer/>
