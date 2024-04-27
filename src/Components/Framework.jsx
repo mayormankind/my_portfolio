@@ -30,7 +30,7 @@ function Framework() {
                     {Obj.map((each,id)=>(
                         <Reveal key={id}>
                             <Flex fontSize={'25px'} lineHeight='5' flexDir={{sm:'row',base:'column'}} align={'center'} w={'fit-content'}>
-                                <Text color={each.color} mr='5px'>{each.img}</Text>
+                                <Text color={each.color} mr='5px' title={each.img}>{each.img}</Text>
                                 <Text fontSize={'12px'} fontWeight='bold'>{each.frname}</Text>
                             </Flex>
                         </Reveal>

@@ -1,6 +1,8 @@
 import { collection, onSnapshot } from 'firebase/firestore';
 import {RiMailFill,RiWhatsappFill,RiGithubFill,RiTwitterFill, RiFacebookFill, RiLinkedinBoxFill, RiInstagramFill, RiYoutubeFill} from 'react-icons/ri';
 import { db } from '../firebase';
+import { FaGamepad, FaServer } from 'react-icons/fa';
+import { SiFrontendmentor } from 'react-icons/si';
 
 export const Navs = [
   {lab:'Home',refr:'#home'},
@@ -82,3 +84,9 @@ export const getProjects = (setData)=>{
     )
   })
 }
+
+export const CategoryList= [
+  {label: "Front-end", icon: <SiFrontendmentor/>, desc: "Frontend projects rangong from websites to SPA's", href:'/fe'},
+  {label: "Fullstack", icon: <FaServer/>, desc: 'A collection of game designs', href:'/fs'},
+  {label: "Games", icon: <FaGamepad/>, desc: 'A collection of game designs', href:'/games'}
+]

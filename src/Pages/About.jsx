@@ -24,7 +24,7 @@ export default function About() {
                 </Reveal>
                 <Flex flexDir='column' gap='10px' w={{sm:'70%',base:'100%'}} p={{sm:'0 10px',base:'0 20px'}}>
                     <Reveal>
-                        <Text fontSize={{md:'3xl',sm:'2xl',base:'xl'}} fontWeight='bold'>I'm Makinde Mayowa</Text>
+                        <Text fontSize={{md:'3xl',sm:'2xl',base:'xl'}} fontWeight='bold'>I'm Makinde Mayowa! 👋👋</Text>
                     </Reveal>
                     <Reveal>
                         <Text fontSize='sm' textAlign={'justify'}>A skilled and experienced web developer with a passion for crafting innovative and visually stunning  websites. With 3 years of experience in the industry, I have honed my skills in developing cutting-edge websites that not only look great but also function seamlessly. With a keen eye for detail and a commitment to excellence,I work closely with team members to understand and create custom solutions that exceed their expectations. </Text>
