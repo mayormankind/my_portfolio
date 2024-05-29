@@ -1,12 +1,13 @@
 import React from 'react';
-import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import { Box, useColorMode } from '@chakra-ui/react';
 import Header from '../Components/Header';
 import About from './About';
 import Home from './Home';
 import Projects from './Projects';
 import Footer from '../Components/Footer';
+import Categories from './Categories';
 
-function Layout() {
+function Layout({ setCategory }) {
   const {colorMode}=useColorMode();
   const isDark = colorMode=='dark';
   return (
@@ -14,7 +15,8 @@ function Layout() {
     <Header/>
     <Home/>
     <About/>
-    <Projects/>
+    {/* <Projects/> */}
+    <Categories setCategory={setCategory}/>
     <Footer/>
   </Box>
   )

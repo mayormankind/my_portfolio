@@ -20,7 +20,7 @@ export default function Home() {
                 </Reveal>
                 <Box mx={{xs:'0',base:'auto'}} mt='10px' w={{lg:'50%', base:'100%'}}>
                     <Reveal>
-                        <Button bg={'faintBlue'} as='a' href='mailto:mayowamakinde23@gmail.com' cursor='pointer' w='100%'>Mail Me</Button>
+                        <Button bg={'faintBlue'} as='a' href='mailto:mayowamakinde23@gmail.com' cursor='pointer' _hover={{border:'2px solid faintBlue', bg:'transparent'}} fontWeight={'normal'} w='100%'>Mail Me</Button>
                     </Reveal>
                 </Box>
             </Flex>

@@ -1,27 +1,35 @@
 import { Box, Flex, Grid, useColorMode, Text, keyframes, Button } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import { SidebarAnimation } from '../chakra/Styles';
+import React from 'react';
 import ProjectCard from '../Components/ProjectCard';
-import { projectList, getProjects } from '../Components/Constants';
-import { Link } from 'react-router-dom';
-import { RiArrowRightFill } from 'react-icons/ri';
+import { projectList } from '../Components/Constants';
 import { Reveal } from '../Components/Reveal';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
-//46IRNG5SEP
-//dARK MOVIE
 
-function Projects() {
+function Projects({ setCategory, category }) {
+
+    const CatIdent = [
+        { id:'fe', label:'Front-end' },
+        { id:'fs', label:'Full Stack' },
+        { id:'gm', label:'Games' },
+    ]
+
     const {colorMode}=useColorMode();
     const isDark = colorMode==='dark';
     const animate = keyframes `
         0%{transform:translateX(0px)}
         50%{transform:translateX(20px)}
         100%{transform:translateX(0px)}`;
-
+    
+    const handleClick=(id)=>{
+        setCategory(id)
+    }
     
   return (
-    <Box w='100%' h='100%' id='projects' className='scroll' mb={'30px'} pos='relative'>
-        <Flex mx='auto' maxW='1100px' flexDir='column' w='100%' p='10px'>
+    <Box w='100%' h='100%' id='projects' pos='relative'>
+        <Header alt/>
+        <Flex mx='auto' maxW='1100px' gap={'10px'} flexDir='column' w='100%' p='10px'>
             <Box mx='auto'>
                 <Reveal>
                     <Flex position='relative' mx={{sm:'auto',base:'30px'}}>
@@ -30,27 +38,20 @@ function Projects() {
                     </Flex>
                 </Reveal>
             </Box>
-
+            <Flex textAlign={'center'} w='100%'>
+                {CatIdent.map(cat=>(
+                    <Button p={'2px 5px'} w='100%' borderRadius={'0'} borderBottom={category === cat.id ? '3px solid #0A6DE4' : ''} onClick={()=>handleClick(cat.id)}>{cat.label}</Button>
+                ))}
+            </Flex>
             <Grid gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} justifyItems={'center'} w='100%' gap='30px' px='10px' m='20px 0'>
-                {projectList.map((each,id)=>(
-                    <Reveal>
-                        <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks}/>
+                {projectList.filter(each=>each.cat === category).map((each,id)=>(
+                    <Reveal key={id}>
+                        <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks} cat={each.cat}/>
                     </Reveal>
                 ))}
             </Grid>
-            <Box mx='auto'>
-                <Reveal>
-                    <Button variant='outline' alignItems='center' mx='auto' w='fit-content' colorScheme={isDark ? 'white' : 'black'} borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} p='0 20px'>
-                            <Link to='/projects'>
-                                <Flex gap='3px' align='center' w='fit-content'>
-                                    <Text fontSize='15px'>View all projects</Text>
-                                    <Text as='i' animation={`${animate} 2s linear infinite`}><RiArrowRightFill/></Text>
-                                </Flex>
-                            </Link>
-                    </Button>
-                </Reveal>
-            </Box>
         </Flex>
+        <Footer alt/>
     </Box> 
     )
 }

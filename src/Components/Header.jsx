@@ -4,7 +4,7 @@ import { RiMenu3Fill} from 'react-icons/ri';
 import { SocialIcons } from '../chakra/Styles';
 import { Navs } from './Constants';
 import { Reveal } from './Reveal';
-function Header() {
+function Header({ alt }) {
   const {colorMode, toggleColorMode} =useColorMode();
   const isDark = colorMode==='dark';
   const [modal,setModal ] = useState(false);
@@ -38,7 +38,7 @@ function Header() {
             <Flex flexDir={'column'} p='30px 0' h='50%' w='100%' align='center' justify={'space-around'} fontWeight='semibold'>
               {Navs.map((nav,id)=>(
                 <Reveal key={id}>
-                  <Link href={nav.refr} onClick={dispModal} color='white' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
+                  <Link href={alt ? nav.alt : nav.refr} onClick={dispModal} color='white' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
                 </Reveal>
               ))}
             </Flex>

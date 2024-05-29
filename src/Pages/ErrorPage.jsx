@@ -7,7 +7,7 @@ export default function ErrorPage() {
           <Text>oops! page not found</Text>
           <Heading size={"4xl"} as="h1" color='#0A6DE4'>404 page</Heading>
           <Text>Sorry, but the page you requested was not found!</Text>
-          <Link href="/" color='#E7F0FF' _hover={{color:'orange', borderBottom:'2px solid #0A6DE4'}}>Go back to home page</Link>
+          <Link href="/" color='#E7F0FF' _hover={{ borderBottom:'2px solid #0A6DE4'}}>Go back to home page</Link>
         </Flex>
     </Box>
   )

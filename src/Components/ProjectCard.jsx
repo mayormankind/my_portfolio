@@ -21,7 +21,7 @@ function ProjectCard(props) {
             <Reveal>
                 <Image src={props.img} rounded={'md'} w={'300px'} loading='lazy' h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
             </Reveal>
-            <VStack w={'100%'} textAlign='center' h='100%' spacing={'15px'} p={'10px'}> 
+            <VStack w={'100%'} h='100%' spacing={'15px'} p={'10px'}> 
                 <Box w={'100%'}>
                     <Reveal>
                         <Text as={'h2'} fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
@@ -31,8 +31,8 @@ function ProjectCard(props) {
                     </Reveal>
                 </Box>    
                 <HStack flexWrap={'wrap'} w='100%' fontSize={'12px'}>
-                    {props.frames.map(tech=>(
-                        <Reveal>
+                    {props.frames.map((tech,id)=>(
+                        <Reveal key={id}>
                             <Text border={`2px solid ${BorderColorGen()}`}  lineHeight={'short'} p='6px' rounded={'full'}>{tech}</Text>
                         </Reveal>
                     ))}
