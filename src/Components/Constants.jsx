@@ -36,12 +36,6 @@ export const Accounts=[
     icon:<RiMailFill/>,
     ref:'mailto:mayowamakinde23@gmail.com?subject=SendMail&body=Description'
   },
-  // {
-  //   id:'5',
-  //   Sname:'Facebook',
-  //   icon:<RiFacebookFill/>,
-  //   ref:'https://www.facebook.com/profile.php?id=100081687606178'
-  // },
   {
     id:'6',
     Sname:'Instagram',

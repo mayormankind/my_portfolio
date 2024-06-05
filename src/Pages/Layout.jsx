@@ -15,7 +15,6 @@ function Layout({ setCategory }) {
     <Header/>
     <Home/>
     <About/>
-    {/* <Projects/> */}
     <Categories setCategory={setCategory}/>
     <Footer/>
   </Box>
