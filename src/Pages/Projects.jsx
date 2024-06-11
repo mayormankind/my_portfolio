@@ -44,9 +44,9 @@ function Projects({ setCategory, category }) {
                 ))}
             </Flex>
             <Grid gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} justifyItems={'center'} w='100%' gap='30px' px='10px' m='20px 0'>
-                {projectList.filter(each=>each.cat === category).map((each,id)=>(
+                {projectList.filter(each=>each.category === category).map((each,id)=>(
                     <Reveal key={id}>
-                        <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks} cat={each.cat}/>
+                        <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks} category={each.category}/>
                     </Reveal>
                 ))}
             </Grid>

@@ -6,7 +6,7 @@ import Add from './Add'
 export default function DashboardContent({ screen }) {
 
   return (
-    <Box flex='0.7'>
+    <Box w='100%' flex='0.8'>
         {screen === 'list' && <ProjectList/>}
         {screen === 'add' && <Add/>}
     </Box>
