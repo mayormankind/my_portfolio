@@ -20,6 +20,7 @@ function Projects({ setCategory, category }) {
         { id:'fs', label:'Full Stack' },
         { id:'gm', label:'Games' },
     ]
+    console.log(projects);
 
     const {colorMode}=useColorMode();
     const isDark = colorMode==='dark';
@@ -50,9 +51,18 @@ function Projects({ setCategory, category }) {
                 ))}
             </Flex>
             <Grid gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} justifyItems={'center'} w='100%' gap='30px' px='10px' m='20px 0'>
-                {projects.filter(each=>each.category === category).map((each,id)=>(
-                    <Reveal key={id}>
-                        <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks} category={each.category}/>
+                {projects.filter(proj=>proj.category === category).map(proj=>(
+                    <Reveal key={proj.id}>
+                        <ProjectCard 
+                            key={proj.pid}
+                            projectImage={proj.projectImage}
+                            projectName={proj.projectName}
+                            projectDetails={proj.projectDetails}
+                            category={proj.category}
+                            pref={proj.pref}
+                            github={proj.github}
+                            frameworks={proj.frameworks}
+                        />
                     </Reveal>
                 ))}
             </Grid>
@@ -61,5 +71,6 @@ function Projects({ setCategory, category }) {
     </Box> 
     )
 }
+
 
 export default Projects;

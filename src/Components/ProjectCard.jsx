@@ -19,19 +19,19 @@ function ProjectCard(props) {
     <Box p={'20px'} w='100%' maxW={'350px'} rounded={'xl'} boxShadow='xl' cursor='pointer' bg={isDark?'#121212':'#d0d0d0'} mx='auto'>
         <Flex pos='relative' flexDir={'column'} w='100%' gap='10px' mx='auto'>
             <Reveal>
-                <Image src={props.img} rounded={'md'} w={'300px'} loading='lazy' h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.img)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
+                <Image src={props.projectImage} rounded={'md'} w={'300px'} loading='lazy' h='200px' boxShadow={'xl'} mx={'auto'} onClick={()=>pippete(props.projectImage)} cursor='pointer' _hover={{opacity:'0.7',blur:'lg'}}/>
             </Reveal>
             <VStack w={'100%'} h='100%' spacing={'15px'} p={'10px'}> 
                 <Box w={'100%'}>
                     <Reveal>
-                        <Text as={'h2'} fontSize='20px' fontWeight={'bold'}>{props.name}</Text>
+                        <Text as={'h2'} fontSize='20px' fontWeight={'bold'}>{props.projectName}</Text>
                     </Reveal>
                     <Reveal>
-                        <Text fontSize='12px'>{props.det}</Text>
+                        <Text fontSize='12px'>{props.projectDetails}</Text>
                     </Reveal>
                 </Box>    
                 <HStack flexWrap={'wrap'} w='100%' fontSize={'12px'}>
-                    {props.frames.map((tech,id)=>(
+                    {props.frameworks.split(' ').map((tech,id)=>(
                         <Reveal key={id}>
                             <Text border={`2px solid ${BorderColorGen()}`}  lineHeight={'short'} p='6px' rounded={'full'}>{tech}</Text>
                         </Reveal>
@@ -39,10 +39,10 @@ function ProjectCard(props) {
                 </HStack>
                 <HStack w='100%'>     
                     <Reveal>
-                        <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.href} fontSize='xs' w='100%' borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontWeight='normal' rightIcon={<RiGlobalFill/>}>View demo</Button>
+                        <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.pref} fontSize='xs' w='100%' borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontWeight='normal' rightIcon={<RiGlobalFill/>}>View demo</Button>
                     </Reveal>               
                     <Reveal>
-                        <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.git} borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontSize='xs' w='100%' fontWeight='normal' rightIcon={<RiGithubFill/>}>Github repo</Button>
+                        <Button as={'a'} variant={'outline'} colorScheme={isDark ? 'white' : 'black'} href={props.github} borderTopLeftRadius={'40px'} borderBottomRightRadius={'40px'} fontSize='xs' w='100%' fontWeight='normal' rightIcon={<RiGithubFill/>}>Github repo</Button>
                     </Reveal>
               </HStack>
             </VStack>
