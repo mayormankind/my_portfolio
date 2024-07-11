@@ -49,7 +49,7 @@ function Header({ alt }) {
         <Flex display={{sm:'flex',base:'none'}} mr='10px' flexDir={{sm:'row',base:'column'}} gap='20px'>
           {Navs.map((nav,id)=>(
             <Reveal key={id}>
-              <Link href={nav.refr} fontWeight='semibold' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
+              <Link href={alt ? nav.alt : nav.refr} fontWeight='semibold' fontSize={'sm'} _hover={{borderBottom:'2px solid #0A6DE4'}}>{nav.lab}</Link>
             </Reveal>
           ))}
         </Flex>

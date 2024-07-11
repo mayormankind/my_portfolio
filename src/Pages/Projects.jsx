@@ -1,13 +1,19 @@
 import { Box, Flex, Grid, useColorMode, Text, keyframes, Button } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from '../Components/ProjectCard';
-import { projectList } from '../Components/Constants';
+import { getProjects, projectList } from '../Components/Constants';
 import { Reveal } from '../Components/Reveal';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
 
 function Projects({ setCategory, category }) {
+
+    const [ projects, setProjects ] = useState([]);
+
+    useEffect(()=>{
+        const Projects = getProjects(setProjects);
+    },[])
 
     const CatIdent = [
         { id:'fe', label:'Front-end' },
@@ -44,7 +50,7 @@ function Projects({ setCategory, category }) {
                 ))}
             </Flex>
             <Grid gridTemplateColumns={'repeat(auto-fit, minmax(20rem, 1fr))'} justifyItems={'center'} w='100%' gap='30px' px='10px' m='20px 0'>
-                {projectList.filter(each=>each.category === category).map((each,id)=>(
+                {projects.filter(each=>each.category === category).map((each,id)=>(
                     <Reveal key={id}>
                         <ProjectCard key={id} name={each.projectName} href={each.pref} git={each.github} img={each.projectImage} det={each.projectDetails} frames={each.frameworks} category={each.category}/>
                     </Reveal>
